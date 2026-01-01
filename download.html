@@ -10,7 +10,7 @@
   <!-- Meta tags الأساسية -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <meta name="robots" content="noindex,nofollow"/>
-  <meta name="description" content="صفحة تحميل InstaGold_v10.50 - النسخة واتساب محمد الطواف"/>
+  <meta name="description" content="صفحة تحميل MTWhatsApp_v48 - النسخة واتساب محمد الطواف"/>
   <meta name="keywords" content="تحميل MTWhatsApp, تنزيل MTWhatsApp "/>
 
   <!-- الخطوط -->
@@ -436,6 +436,659 @@
       font-size: 16px;
       margin-bottom: 8px;
       color: var(--text-dark);
+    }
+    
+    .step-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* الفوتر */
+    .footer {
+      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+      color: #aaa;
+      padding: 40px 15px 25px;
+      margin-top: 40px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .footer-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    
+    .footer-links a {
+      text-decoration: none;
+      color: #aaa;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: var(--transition);
+      font-size: 14px;
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold-primary);
+    }
+    
+    .footer-section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+    
+    .footer-section-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 45px;
+      height: 3px;
+      background: var(--gold-primary);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 25px;
+      margin-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+      color: #777;
+    }
+    
+    .disclaimer {
+      font-size: 12px;
+      color: #777;
+      margin-top: 12px;
+      line-height: 1.7;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* الرسوم المتحركة */
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* تحسينات للجوال */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+      
+      .app-logo {
+        width: 110px;
+        height: 110px;
+      }
+      
+      .app-logo-bg {
+        width: 134px;
+        height: 134px;
+      }
+      
+      .app-title {
+        font-size: 20px;
+      }
+      
+      .app-description {
+        font-size: 14px;
+      }
+      
+      .download-btn {
+        font-size: 16px;
+        padding: 14px 25px;
+      }
+      
+      .section-title {
+        font-size: 20px;
+      }
+      
+      .footer-logo {
+        font-size: 20px;
+      }
+      
+      .footer-desc {
+        font-size: 14px;
+      }
+    }
+	
+	/* === إعلانات أدسنس - نسخة مبسطة === */
+
+/* إعلان الرأس */
+.ads-header {
+  margin: 20px auto 30px;
+  max-width: 728px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.ads-label {
+  font-size: 12px;
+  color: var(--text-gray);
+  margin-bottom: 8px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* إعلان داخل المحتوى */
+.ads-inline {
+  margin: 30px auto;
+  max-width: 600px;
+  text-align: center;
+  padding: 15px;
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* إعلان الفوتر */
+.ads-footer {
+  margin: 30px auto 0;
+  max-width: 728px;
+  text-align: center;
+  padding: 0 15px;
+}
+
+/* إعلان موبايل */
+.ads-mobile {
+  display: none;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* حاوية الإعلان */
+.ad-container {
+  display: block;
+  text-align: center;
+  min-height: 90px;
+  background: rgba(40, 40, 40, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* تحسينات للجوال */
+@media (max-width: 768px) {
+  .ads-header {
+    max-width: 320px;
+  }
+  
+  .ads-footer {
+    max-width: 320px;
+  }
+  
+  .ads-mobile {
+    display: block;
+    max-width: 320px;
+  }
+  
+  .ads-inline {
+    max-width: 320px;
+  }
+  
+  /* طريقة بسيطة لمركزة الإعلانات */
+  .ad-container {
+    text-align: center;
+  }
+  
+  .ad-container ins {
+    display: inline-block !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ads-header,
+  .ads-footer,
+  .ads-inline {
+    max-width: 300px;
+  }
+  
+  .ads-mobile {
+    max-width: 300px;
+  }
+}
+
+/* الحل الأكيد لمركزة إعلانات أدسنس */
+.ad-container {
+  text-align: center;
+}
+
+.ad-container ins {
+  display: inline-block !important;
+  margin: 0 auto !important;
+  text-align: center;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- شاشة التحميل -->
+  <div id="loader">
+    <div class="loader-content">
+      <img src="https://instagold.download/favicon.ico" alt="MTWhatsApp" class="loader-logo">
+      <div class="loader-text" data-lang="ar">جاري تحميل الصفحة...</div>
+      <div class="loader-text" data-lang="en">Loading page...</div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar" id="loaderBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- الشريط العلوي -->
+  <div class="top-bar">
+    <a href="index.html" class="logo">
+      <i class="fas fa-arrow-left logo-icon"></i>
+      <span>MTWhatsApp</span>
+    </a>
+    
+    <div class="lang-switcher">
+      <button class="lang-btn" onclick="setLanguage('ar')">🇸🇦 عربي</button>
+      <button class="lang-btn" onclick="setLanguage('en')">🇺🇸 English</button>
+    </div>
+  </div>
+
+  <!-- الهيدر -->
+  <header class="header">
+    <div class="header-content">
+      <h1 data-lang="ar">صفحة التحميل</h1>
+      <h1 data-lang="en">Download Page</h1>
+      
+      <p class="subtitle" data-lang="ar">جاري إعداد ملف التحميل لـ MTWhatsApp</p>
+      <p class="subtitle" data-lang="en">Preparing download file for MTWhatsApp</p>
+      
+      <div class="version-badge">v48</div>
+    </div>
+  </header>
+  
+  
+
+  
+
+  <!-- المحتوى الرئيسي -->
+  <div class="main-content">
+    <!-- بطاقة التحميل -->
+    <div class="download-card">
+      <div class="app-logo-container">
+        <div class="app-logo-bg"></div>
+        <img src="instagold.png" alt="InstaGold" class="app-logo">
+      </div>
+      
+      <h2 class="app-title" data-lang="ar">واتساب محمد</h2>
+      <h2 class="app-title" data-lang="en">MTWhatsApp</h2>
+      
+      <p class="app-description" data-lang="ar">
+        جاري تجهيز ملف التحميل لنسخة MTWhatsApp المحسنة من واتساب
+      </p>
+      <p class="app-description" data-lang="en">
+        Preparing download file for enhanced MTWhatsApp version of WhatsApp
+      </p>
+      
+      <div class="app-meta">
+        <div class="meta-item">
+          <div class="meta-icon"><i class="fas fa-download"></i></div>
+          <div class="meta-value">116MB</div>
+          <div class="meta-label" data-lang="ar">حجم الملف</div>
+          <div class="meta-label" data-lang="en">File Size</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-icon"><i class="fas fa-sync-alt"></i></div>
+          <div class="meta-value">v48</div>
+          <div class="meta-label" data-lang="ar">الإصدار</div>
+          <div class="meta-label" data-lang="en">Version</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-icon"><i class="fas fa-check-circle"></i></div>
+          <div class="meta-value" data-lang="ar">آمن</div>
+          <div class="meta-value" data-lang="en">Safe</div>
+          <div class="meta-label" data-lang="ar">بدون فيروسات</div>
+          <div class="meta-label" data-lang="en">Virus Free</div>
+        </div>
+      </div>
+	  
+	  
+
+	  
+      
+      <div id="countdownBox" class="countdown-box">
+        <i class="fas fa-spinner fa-spin"></i>
+        <span data-lang="ar">جاري التحضير للتنزيل... 6</span>
+        <span data-lang="en">Preparing download... 6</span>
+      </div>
+
+      <a href="https://pub-fcc4c650de6544149a3552e96291577e.r2.dev/MTWhatsApp/MTWhatsApp_V48.apk" 
+         id="finalDownloadBox" class="download-btn" style="display: none;">
+        <i class="fas fa-download"></i>
+        <span data-lang="ar">تنزيل الآن</span>
+        <span data-lang="en">Download Now</span>
+      </a>
+    </div>
+	
+
+    
+    <!-- تعليمات التثبيت -->
+    <div class="instructions-card">
+      <h2 class="section-title" data-lang="ar">تعليمات التثبيت</h2>
+      <h2 class="section-title" data-lang="en">Installation Instructions</h2>
+	  
+	  
+
+      
+      <ol class="steps-list">
+        <li class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title" data-lang="ar">تفعيل التثبيت من مصادر غير معروفة</h3>
+            <h3 class="step-title" data-lang="en">Enable installation from unknown sources</h3>
+            <p class="step-desc" data-lang="ar">
+              اذهب إلى الإعدادات → الأمان → مفعل خيار "مصادر غير معروفة"
+            </p>
+            <p class="step-desc" data-lang="en">
+              Go to Settings → Security → Enable "Unknown Sources"
+            </p>
+          </div>
+        </li>
+        
+        <li class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title" data-lang="ar">تنزيل وتثبيت التطبيق</h3>
+            <h3 class="step-title" data-lang="en">Download and install the app</h3>
+            <p class="step-desc" data-lang="ar">
+              اضغط على زر التنزيل وقم بتثبيت التطبيق بعد انتهاء التنزيل
+            </p>
+            <p class="step-desc" data-lang="en">
+              Click the download button and install the app after download completes
+            </p>
+          </div>
+        </li>
+        
+        <li class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title" data-lang="ar">تسجيل الدخول والاستمتاع</h3>
+            <h3 class="step-title" data-lang="en">Login and enjoy</h3>
+            <p class="step-desc" data-lang="ar">
+              سجل دخولك إلى حساب إنستقرام واستمتع بالميزات الإضافية
+            </p>
+            <p class="step-desc" data-lang="en">
+              Login to your Instagram account and enjoy the additional features
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+  
+  
+
+  <!-- الفوتر -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo">
+          <i class="fas fa-crown"></i>
+          <span>MTWhatsApp</span>
+        </div>
+        
+        <p class="footer-desc" data-lang="ar">
+          نسخة محسنة من تطبيق واتساب مع ميزات فريدة غير موجودة في التطبيق الرسمي.
+          نسعى لتقديم أفضل تجربة مستخدم مع الحفاظ على الأمان والخصوصية.
+        </p>
+        <p class="footer-desc" data-lang="en">
+          An enhanced version of the Instagram app with unique features not available in the official app.
+          We strive to provide the best user experience while maintaining security and privacy.
+        </p>
+        
+        <div class="footer-links">
+          <a href="/privacy-policy.html"><i class="fas fa-shield-alt"></i> <span data-lang="ar">الأمان والخصوصية</span><span data-lang="en">Security & Privacy</span></a>
+          <a href="/faq.html"><i class="fas fa-question-circle"></i> <span data-lang="ar">الأسئلة الشائعة</span><span data-lang="en">FAQ</span></a>
+          <a href="/terms.html"><i class="fas fa-book"></i> <span data-lang="ar">الشروط والأحكام</span><span data-lang="en">Terms & Conditions</span></a>
+          <a href="/contact.html"><i class="fas fa-envelope"></i> <span data-lang="ar">اتصل بنا</span><span data-lang="en">Contact Us</span></a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="footer-section-title" data-lang="ar">روابط مفيدة</h3>
+        <h3 class="footer-section-title" data-lang="en">Useful Links</h3>
+        
+        <div class="footer-links">
+          <a href="https://t.me/mtwhatsapp"><i class="fab fa-telegram"></i> <span data-lang="ar">قناة التليجرام</span><span data-lang="en">Telegram Channel</span></a>
+          <a href="/user-guide.html"><i class="fab fa-youtube"></i> <span data-lang="ar">دليل الاستخدام</span><span data-lang="en">User Guide</span></a>
+          <a href="https://www.mtaltawaf.com"><i class="fas fa-mobile-alt"></i> <span data-lang="ar">تطبيقات أخرى</span><span data-lang="en">Other Apps</span></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2026 MTMODS. <span data-lang="ar">جميع الحقوق محفوظة</span><span data-lang="en">All rights reserved</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // محاكاة تقدم التحميل
+      let progress = 0;
+      const progressBar = document.getElementById('loaderBar');
+      const progressInterval = setInterval(() => {
+        progress += Math.random() * 10;
+        progressBar.style.width = `${progress}%`;
+        
+        if (progress >= 100) {
+          clearInterval(progressInterval);
+          document.getElementById('loader').style.opacity = '0';
+          setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+          }, 500);
+        }
+      }, 100);
+      
+      // تعيين اللغة التلقائي
+      const userLang = navigator.language.startsWith("ar") ? "ar" : "en";
+      setLanguage(userLang);
+      
+      // تحميل إعلانات أدسنس بعد تحميل الصفحة
+      setTimeout(() => {
+        try {
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+          console.log('Error loading ads:', e);
+        }
+      }, 2000);
+      
+      // إصلاح محاذاة الإعلانات بعد التحميل
+      setTimeout(fixAdAlignment, 2500);
+    });
+
+    let lang = 'ar';
+    function setLanguage(selectedLang) {
+      lang = selectedLang;
+      
+      // تحديث كل العناصر بلغة واحدة
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'inline-block' : 'none';
+      });
+      
+      // تحديث direction و lang للصفحة
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+      
+      // تحديث تسميات الإعلانات
+      updateAdLabels();
+    }
+    
+    // دالة لتحديث تسميات الإعلانات
+    function updateAdLabels() {
+      document.querySelectorAll('.ads-label').forEach(label => {
+        label.style.display = label.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
+    }
+
+    function startCountdown() {
+      document.getElementById("fileInfoBox").style.display = "none";
+      var counter = 6;
+      var countdownBox = document.getElementById("countdownBox");
+      var finalBtn = document.getElementById("finalDownloadBox");
+
+      countdownBox.style.display = "block";
+      countdownBox.innerHTML = lang === "ar"
+        ? `<i class="fas fa-spinner fa-spin"></i> جاري التحضير للتنزيل... ${counter}`
+        : `<i class="fas fa-spinner fa-spin"></i> Preparing download... ${counter}`;
+
+      var interval = setInterval(function () {
+        counter--;
+        countdownBox.innerHTML = lang === "ar"
+          ? `<i class="fas fa-spinner fa-spin"></i> جاري التحضير للتنزيل... ${counter}`
+          : `<i class="fas fa-spinner fa-spin"></i> Preparing download... ${counter}`;
+
+        if (counter === 0) {
+          clearInterval(interval);
+          countdownBox.style.display = "none";
+          finalBtn.style.display = "flex";
+        }
+      }, 1000);
+    }
+    
+    // دالة لإصلاح محاذاة إعلانات أدسنس
+    function fixAdAlignment() {
+      const isMobile = window.innerWidth <= 768;
+      
+      // إصلاح محاذاة جميع الإعلانات
+      document.querySelectorAll('.ad-container ins').forEach(ad => {
+        // تطبيق الأنماط الأساسية
+        ad.style.margin = '0 auto';
+        ad.style.display = 'block';
+        ad.style.textAlign = 'center';
+        
+        // تعديل الحجم للجوال
+        if (isMobile) {
+          const container = ad.closest('.ad-container');
+          if (container) {
+            // تحديد حجم الإعلان بناءً على مكانه
+            if (container.closest('.ads-header') || container.closest('.ads-footer')) {
+              ad.style.width = '320px';
+              ad.style.height = '50px';
+            } else if (container.closest('.ads-inline')) {
+              ad.style.width = '300px';
+              ad.style.height = '250px';
+            } else if (container.closest('.ads-mobile')) {
+              ad.style.width = '320px';
+              ad.style.height = '50px';
+            }
+          }
+        }
+      });
+      
+      // التحكم في عرض إعلان الجوال
+      const mobileAds = document.querySelector('.ads-mobile');
+      if (mobileAds) {
+        mobileAds.style.display = isMobile ? 'block' : 'none';
+      }
+      
+      // إضافة padding إضافي للإعلانات على الجوال لتحسين المحاذاة
+      if (isMobile) {
+        document.querySelectorAll('.ads-inline, .ads-header, .ads-footer').forEach(adContainer => {
+          adContainer.style.padding = '0 10px';
+        });
+      }
+    }
+    
+    // دالة لاكتشاف حجم الشاشة
+    function detectScreenSize() {
+      fixAdAlignment(); // نستدعي نفس الدالة
+    }
+    
+    // تشغيل الدوال عند الأحداث
+    window.addEventListener('load', () => {
+      // تأخير بسيط لضمان تحميل الإعلانات
+      setTimeout(fixAdAlignment, 1000);
+    });
+    
+    window.addEventListener('resize', detectScreenSize);
+    
+    // تشغيل إضافي بعد 3 ثوان للتأكد
+    setTimeout(fixAdAlignment, 3000);
+    
+    // حل خاص لمشكلة محاذاة أدسنس النهائي
+    function finalAdFix() {
+      // إعادة تطبيق الأنماط بعد فترة للتأكد
+      document.querySelectorAll('.ad-container').forEach(container => {
+        container.style.textAlign = 'center';
+        
+        const ad = container.querySelector('ins');
+        if (ad) {
+          ad.style.margin = '0 auto';
+          ad.style.display = 'block';
+          
+          // إذا كان الإعلان محملاً بالفعل
+          if (ad.offsetHeight > 0) {
+            // مركزة الإعلان داخل الحاوية
+            const containerWidth = container.offsetWidth;
+            const adWidth = ad.offsetWidth;
+            
+            if (adWidth > 0) {
+              const marginLeft = (containerWidth - adWidth) / 2;
+              ad.style.marginLeft = `${marginLeft}px`;
+              ad.style.marginRight = `${marginLeft}px`;
+            }
+          }
+        }
+      });
+    }
+    
+    // تشغيل الحل النهائي عدة مرات للتأكد
+    [4000, 6000, 10000].forEach(time => {
+      setTimeout(finalAdFix, time);
+    });
+  </script>
+</body>
+</html>
+: var(--text-dark);
     }
     
     .step-desc {
