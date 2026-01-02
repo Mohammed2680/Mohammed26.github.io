@@ -1,1 +1,8 @@
-
+{ "show_message": true,
+    "title": " Download InstaGold 10.60",
+    "content_url": "https://instagold.download/update", 
+    "positive_btn": "Cancel",
+    "link": "https://instagold.download/update", 
+    "positive_btn2": "Download Now", 
+    "link2": "https://instagold.download/update",
+    "cancelable": true }
