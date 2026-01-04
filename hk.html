@@ -13,6 +13,8 @@
     --accent:#00f2ff;
     --accent2:#bd00ff;
     --glass:rgba(255,255,255,.06);
+    --glitch-color1:#00f2ff;
+    --glitch-color2:#bd00ff;
 }
 
 /* Reset */
@@ -28,13 +30,13 @@ body{
     overflow:hidden;
 }
 
-/* خلفية متحركة */
+/* خلفية ديناميكية Neon */
 body::before{
     content:"";
     position:absolute;top:-50%;left:-50%;
     width:200%;height:200%;
     background:radial-gradient(circle,#1a1a3a,#000);
-    animation:bgRotate 30s linear infinite;
+    animation:bgRotate 40s linear infinite;
     z-index:0;
 }
 @keyframes bgRotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
@@ -46,7 +48,7 @@ body::before{
     width:92%;
     max-width:400px;
     background:rgba(255,255,255,.03);
-    backdrop-filter:blur(25px);
+    backdrop-filter:blur(30px);
     border-radius:30px;
     border:1px solid rgba(255,255,255,.08);
     padding:25px 20px;
@@ -63,7 +65,13 @@ body::before{
     background:linear-gradient(90deg,var(--accent),var(--accent2));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    text-shadow:0 0 15px var(--accent);
+    text-shadow:0 0 10px var(--accent),0 0 20px var(--accent2);
+    animation:neonText 1.5s infinite alternate;
+}
+@keyframes neonText{
+    0%{text-shadow:0 0 10px var(--accent),0 0 20px var(--accent2)}
+    50%{text-shadow:0 0 15px var(--accent),0 0 25px var(--accent2)}
+    100%{text-shadow:0 0 10px var(--accent),0 0 20px var(--accent2)}
 }
 .sub-title{font-size:.75rem;color:#aaa;letter-spacing:1px;}
 
@@ -83,8 +91,6 @@ body::before{
     gap:8px;
     box-shadow:0 0 15px rgba(255,215,0,.2);
 }
-
-/* Pulse dot */
 .pulse-dot{
     width:8px;height:8px;
     border-radius:50%;
@@ -116,9 +122,20 @@ body::before{
     align-items:center;
     gap:10px;
     color:#fff;
+    animation:glitchText 2s infinite;
 }
 @keyframes tickerAnim{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.highlight{color:var(--accent);font-weight:700;}
+
+/* Glitch effect */
+@keyframes glitchText{
+    0%{text-shadow: 2px 0 var(--glitch-color1), -2px 0 var(--glitch-color2);}
+    25%{text-shadow: -2px 0 var(--glitch-color1), 2px 0 var(--glitch-color2);}
+    50%{text-shadow: 2px 0 var(--glitch-color2), -2px 0 var(--glitch-color1);}
+    75%{text-shadow: -2px 0 var(--glitch-color2), 2px 0 var(--glitch-color1);}
+    100%{text-shadow: 2px 0 var(--glitch-color1), -2px 0 var(--glitch-color2);}
+}
+
+.highlight{color:var(--accent);font-weight:700}
 
 /* Input Fields */
 .input-group{position:relative;margin-bottom:12px}
@@ -134,7 +151,7 @@ body::before{
 }
 .custom-input:focus,.custom-select:focus{
     border-color:var(--accent);
-    box-shadow:0 0 15px var(--accent);
+    box-shadow:0 0 20px var(--accent);
     background:rgba(0,0,0,.3);
 }
 .field-icon{
@@ -148,7 +165,7 @@ body::before{
 .custom-input:focus + .field-icon,
 .custom-select:focus + .field-icon{color:var(--accent);}
 
-/* Login Button */
+/* Login Button Neon */
 .login-btn{
     width:100%;
     padding:14px;
@@ -162,17 +179,14 @@ body::before{
     cursor:pointer;
     position:relative;
     overflow:hidden;
-    box-shadow:0 0 25px rgba(0,242,255,.3);
+    box-shadow:0 0 25px rgba(0,242,255,.5),0 0 35px rgba(189,0,255,.4);
+    animation:btnGlow 1.5s infinite alternate;
 }
-.login-btn::before{
-    content:'';
-    position:absolute;
-    top:0;left:-100%;
-    width:100%;height:100%;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
-    animation:shine 3s infinite;
+@keyframes btnGlow{
+    0%{box-shadow:0 0 25px rgba(0,242,255,.5),0 0 35px rgba(189,0,255,.4);}
+    50%{box-shadow:0 0 35px rgba(0,242,255,.7),0 0 50px rgba(189,0,255,.6);}
+    100%{box-shadow:0 0 25px rgba(0,242,255,.5),0 0 35px rgba(189,0,255,.4);}
 }
-@keyframes shine{0%{left:-100%}20%{left:100%}100%{left:100%}}
 
 /* Tools Box */
 .tools-box{
@@ -185,24 +199,18 @@ body::before{
     border:1px solid rgba(255,255,255,.06);
     margin-bottom:12px;
 }
-.switch-text{font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:5px}
+.switch-text{font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:5px;animation:neonText 1.5s infinite alternate}
 .switch-sub{font-size:.65rem;color:#aaa;margin-top:2px}
 
 /* Mini switch */
 .mini-switch{width:36px;height:20px;position:relative}
 .mini-switch input{opacity:0;width:0;height:0}
-.slider{
-    position:absolute;inset:0;background:#333;border-radius:34px;transition:.4s
-}
-.slider:before{
-    content:"";
-    position:absolute;width:14px;height:14px;background:#fff;border-radius:50%;
-    left:3px;top:3px;transition:.4s;
-}
+.slider{position:absolute;inset:0;background:#333;border-radius:34px;transition:.4s}
+.slider:before{content:"";position:absolute;width:14px;height:14px;background:#fff;border-radius:50%;left:3px;top:3px;transition:.4s}
 input:checked + .slider{background:var(--accent)}
 input:checked + .slider:before{transform:translateX(16px)}
 
-/* Quick links */
+/* Quick links Neon Hover */
 .quick-links{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -220,7 +228,12 @@ input:checked + .slider:before{transform:translateX(16px)}
     cursor:pointer;
 }
 .quick-item i{display:block;margin-bottom:5px;font-size:1.2rem;color:var(--accent)}
-.quick-item:hover{color:#fff;background:rgba(0,242,255,.1);transform:scale(1.05)}
+.quick-item:hover{
+    color:#fff;
+    background:rgba(0,242,255,.15);
+    transform:scale(1.1);
+    text-shadow:0 0 8px var(--accent),0 0 15px var(--accent2);
+}
 
 /* Modal */
 .modal{
@@ -238,16 +251,16 @@ input:checked + .slider:before{transform:translateX(16px)}
     animation:scaleIn .5s ease;
 }
 @keyframes scaleIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
-.modal-box h3{font-size:1.1rem;margin-bottom:8px}
-.modal-box p{font-size:.85rem;opacity:.9;margin-bottom:12px}
+.modal-box h3{font-size:1.2rem;margin-bottom:8px;color:#fff;text-shadow:0 0 8px var(--accent)}
+.modal-box p{font-size:.85rem;opacity:.9;margin-bottom:12px;color:#fff}
 .modal-box button{
     padding:8px 25px;border-radius:10px;border:1px solid #fff;
     background:transparent;color:#fff;cursor:pointer;
+    box-shadow:0 0 15px var(--accent);
 }
 
 /* Footer */
 .footer-copy{text-align:center;font-size:.6rem;opacity:.3;margin-top:10px}
-
 </style>
 </head>
 
@@ -256,14 +269,13 @@ input:checked + .slider:before{transform:translateX(16px)}
 <!-- إشعار عند الدخول -->
 <div class="modal" id="welcomeModal">
     <div class="modal-box">
-        <h3>عزيزي العميل 🤍</h3>
+        <h3>جمعتك مباركة 🤍</h3>
         <p>لا تجعل الله أهون الناظرين إليك</p>
         <button onclick="closeModal()">فهمت</button>
     </div>
 </div>
 
 <div class="glass-card">
-
 <div class="header">
     <div class="network-name">طواف نت</div>
     <div class="sub-title">شبكة لاسلكية فائقة السرعة</div>
@@ -330,5 +342,6 @@ input:checked + .slider:before{transform:translateX(16px)}
 <script>
 function closeModal(){document.getElementById('welcomeModal').style.display='none'}
 </script>
+
 </body>
 </html>
