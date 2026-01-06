@@ -1,0 +1,11 @@
+{
+    "latestVersionCode": 2,
+    "latestVersionName": "18",
+    "whatsNew": {
+        "ar": "- تحديث قاعدة الواتساب: 2.25.21.82\n- يمكنك الآن إرسال حالات للمجموعات\n- إصلاح مشكلة التجمُد عند تغير ستايل بار التنقل للشاشة الرئيسية\n- اصلاح مشكلة الانهيار عند إجراء أو استقبال المكالمات على بعض الأجهز\n- تم حل مشكلة تجمّد التطبيق في بعض الأجهزة\n- اصلاح الانهيار عند فتح المحادثات في بعض الأجهزة\n- اصلاح مشكلة الانهيار التي تحدث بعد تثبيت التحديث على بعض الأجهزة\n- إصلاح إخفاء صورة جهة الاتصال وزر الاتصال من شاشة المحادثة\n- إصلاح مشكلة عدم القدرة على إضافة حزم الملصقات",
+        "en": "- WhatsApp base update :2.25.21.82\n- Fixed for the issue where the color of viewed statuses does not change\n- Fixed the freezing issue when changing the navigation bar style on the home screen\n- Fixed a crash issue when making or receiving calls on some devices\n- Resolved an issue where the app would freeze on certain devices\n- Fixed a crash that occurred when opening chats on some devices\n- Fixed Addressed a crash that happened after installing the update on certain devices\n- Fixed the issue of contact photos and the call button disappearing in the chat screen\n- Fixed Resolved a crash issue in locked chats\n- Fixed an issue preventing sticker packs from being added\n- General performance and stability improvements"
+    },
+    "downloadUrl": "https://ytgold.app/update",
+    "forceUpdate": false,
+    "showIntervalHours": 3
+}
