@@ -1,11 +1,1 @@
-{
-  "latestVersionCode": 3,
-  "latestVersionName": "25",
-  "whatsNew": {
-  "ar": "- تحديث القاعدة إلى الإصدار 408.0.0.51.78\n- تفعيل ميزة الرسم بشكل كامل\n- تفعيل ميزة الموقع / الخريطة\n- إضافة خيار تغيير وقت تحميل القصة\n- إضافة خطوط جديدة\n- إصلاح مشكلة حجم الصورة المصغرة للقصص\n- إصلاح مشكلة تبديل الوضع الداكن أحيانًا\n- إصلاح مشكلة ظهور شاشة التحديث عند الاتصال\n- إصلاح مشاكل تحميل الوسائط (الصور والفيديوهات)\n- إصلاح مشاكل الانهيار وتحسين الاستقرار\n- إصلاحات وتحسينات كثيرة في الأداء العام\n- يركز هذا التحديث على الاستقرار والسلاسة وتجربة استخدام أفضل",
-  "en": "- Updated base to version 408.0.0.51.78\n- Fully enabled drawing feature\n- Enabled location / map feature\n- Added option to change story loading time\n- Added new fonts\n- Fixed story thumbnail size issue\n- Fixed occasional dark mode switching issue\n- Fixed update screen appearing on connection\n- Fixed media loading issues (photos and videos)\n- Crash fixes and stability improvements\n- Many additional fixes and performance enhancements\n- This update focuses on stability, smooth performance, and a better overall user experience"
-},
-  "downloadUrl": "https://www.mtaltawaf.com/2023/01/download-mtwhatsapp.html",
-   "forceUpdate": false,
-  "showIntervalHours": 3
-}
+
