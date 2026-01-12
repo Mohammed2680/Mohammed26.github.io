@@ -470,6 +470,56 @@
       pointer-events: none;
     }
     
+    /* ✅ زر تليجرام الجديد - نفس تصميم التحميل */
+    .telegram-box {
+      width: 100%;
+      max-width: 380px;
+      margin: 15px auto 0;
+    }
+    
+    .telegram-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #0088cc, #33a8ff);
+      color: white;
+      padding: 16px 30px;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 5px 12px rgba(0, 136, 204, 0.4);
+      transition: var(--transition);
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .telegram-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 136, 204, 0.6);
+    }
+    
+    .telegram-btn::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+      transform: rotate(30deg);
+      pointer-events: none;
+    }
+    
+    .telegram-icon {
+      font-size: 22px;
+    }
+    
     /* ميزات التطبيق */
     .features-card {
       background: white;
@@ -699,6 +749,11 @@
         padding: 14px 25px;
       }
       
+      .telegram-btn {
+        font-size: 16px;
+        padding: 14px 25px;
+      }
+      
       .section-title {
         font-size: 20px;
       }
@@ -900,8 +955,6 @@
           </div>
         </div>
 
-
-                                                      
         <div class="download-box">
           <a href="javascript:void(0);" onclick="startCountdown()" id="fileInfoBox" class="file-box">
             <img src="app_icon.png" alt="icon">
@@ -922,16 +975,22 @@
             <span data-lang="en">Download Now</span>
           </a>
         </div>
+
+        <!-- ✅ زر تليجرام الجديد تحت زر التحميل مباشرة -->
+        <div class="telegram-box">
+          <a href="https://t.me/mtwhatsapp" class="telegram-btn" target="_blank">
+            <i class="fab fa-telegram-plane telegram-icon"></i>
+            <span data-lang="ar">انضم لقناة التليجرام</span>
+            <span data-lang="en">Join Telegram Channel</span>
+          </a>
+        </div>
       </div>
  
-                                        
       <!-- ميزات التطبيق -->
       <div class="features-card">
         <h2 class="section-title" data-lang="ar">بعض الميزات</h2>
         <h2 class="section-title" data-lang="en">Some features</h2>
 
-               
-                             
         <div class="features-grid">
           <div class="feature-item">
             <div class="feature-icon"><i class="fas fa-download"></i></div>
@@ -1050,10 +1109,10 @@
     </div>
     
     <div class="copyright">
-      <p>&copy; 2026 MTMODS. <span data-lang="ar">جميع الحقوق محفوظة</span><span data-lang="en">All rights reserved</span></p>
+      <p>&copy; 2026 MTMODS. <span data-lang="ar">جميع الحقوق محفوظة</span><span data-lang="en">All Rights Reserved</span></p>
     </div>
   </footer>
-
+    
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // محاكاة تقدم التحميل
