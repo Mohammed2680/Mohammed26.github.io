@@ -491,7 +491,7 @@
       border: none;
       border-radius: 50px;
       cursor: pointer;
-   apktext-decoration: none;
+      text-decoration: none;
       box-shadow: 0 5px 12px rgba(0, 136, 204, 0.4);
       transition: var(--transition);
       width: 100%;
@@ -976,15 +976,15 @@
           </a>
         </div>
 
-                    <!-- زر تابع المطور على تلجرام -->
-            <a href="https://t.me/mtwhatsapp" 
-               class="developer-btn" target="_blank">
-              <i class="fab fa-telegram"></i>
-              <span data-lang="ar">تابع المطور على تلجرام</span>
-              <span data-lang="en">Follow Developer on Telegram</span>
-            </a>
+        <div class="telegram-box">
+          <a href="https://t.me/mtwhatsapp" class="telegram-btn" target="_blank">
+            <i class="fab fa-telegram-plane telegram-icon"></i>
+            <span data-lang="ar">انضم لقناة التليجرام</span>
+            <span data-lang="en">Join Telegram Channel</span>
+          </a>
+        </div>
+      </div>
  
-      <!-- ميزات التطبيق -->
       <div class="features-card">
         <h2 class="section-title" data-lang="ar">بعض الميزات</h2>
         <h2 class="section-title" data-lang="en">Some features</h2>
@@ -1051,7 +1051,6 @@
           </div>
         </div>
         
-        <!-- قسم إضافي للمزيد من الميزات -->
         <div style="margin-top: 30px; text-align: center;">
           <h3 style="color: var(--gold-primary); margin-bottom: 15px; font-size: 18px;" data-lang="ar">+15 ميزة أخرى</h3>
           <h3 style="color: var(--gold-primary); margin-bottom: 15px; font-size: 18px;" data-lang="en">+15 More Features</h3>
@@ -1128,76 +1127,51 @@
           }, 500);
         }
       }, 100);
-      
-      // تعيين اللغة التلقائي
-      const userLang = navigator.language.startsWith("ar") ? "ar" : "en";
-      setLanguage(userLang);
-      
-      // تحميل إعلانات أدسنس بعد تحميل الصفحة
-      setTimeout(() => {
-        try {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {
-          console.log('Error loading ads:', e);
-        }
-      }, 2000);
-      
-      // إصلاح محاذاة الإعلانات بعد التحميل
-      setTimeout(fixAdAlignment, 2500);
+
+      // تحديد اللغة الافتراضية
+      setLanguage('ar');
     });
 
-    let lang = 'ar';
-    function setLanguage(selectedLang) {
-      lang = selectedLang;
-      
-      // تحديث كل العناصر بلغة واحدة
+    function setLanguage(lang) {
       document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.dataset.lang === lang ? 'inline-block' : 'none';
+        if (el.getAttribute('data-lang') === lang) {
+          el.style.display = 'block';
+        } else {
+          el.style.display = 'none';
+        }
+        
+        // تعديل اتجاه العناصر المرنة إذا لزم الأمر
+        if(el.classList.contains('download-btn') || el.classList.contains('telegram-btn')) {
+           el.style.display = 'flex';
+        }
       });
       
-      // تحديث direction و lang للصفحة
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.documentElement.lang = lang;
-      
-      // تحديث تسميات الإعلانات
-      updateAdLabels();
-    }
-    
-    // دالة لتحديث تسميات الإعلانات
-    function updateAdLabels() {
-      document.querySelectorAll('.ads-label').forEach(label => {
-        label.style.display = label.getAttribute('data-lang') === lang ? 'block' : 'none';
-      });
     }
 
+    // وظيفة العد التنازلي
     function startCountdown() {
-      document.getElementById("fileInfoBox").style.display = "none";
-      var counter = 6;
-      var countdownBox = document.getElementById("countdownBox");
-      var finalBtn = document.getElementById("finalDownloadBox");
-
-      countdownBox.style.display = "block";
-      countdownBox.innerHTML = lang === "ar"
-        ? `<i class="fas fa-spinner fa-spin"></i> جاري التحضير للتنزيل... ${counter}`
-        : `<i class="fas fa-spinner fa-spin"></i> Preparing download... ${counter}`;
-
-      var interval = setInterval(function () {
-        counter--;
-        countdownBox.innerHTML = lang === "ar"
-          ? `<i class="fas fa-spinner fa-spin"></i> جاري التحضير للتنزيل... ${counter}`
-          : `<i class="fas fa-spinner fa-spin"></i> Preparing download... ${counter}`;
-
-        if (counter === 0) {
+      const fileBox = document.getElementById('fileInfoBox');
+      const countdownBox = document.getElementById('countdownBox');
+      const finalBtn = document.getElementById('finalDownloadBox');
+      
+      fileBox.style.display = 'none';
+      countdownBox.style.display = 'block';
+      
+      let seconds = 10;
+      countdownBox.textContent = `انتظر قليلاً... ${seconds}`;
+      
+      const interval = setInterval(() => {
+        seconds--;
+        countdownBox.textContent = `انتظر قليلاً... ${seconds}`;
+        
+        if (seconds <= 0) {
           clearInterval(interval);
-          countdownBox.style.display = "none";
-          finalBtn.style.display = "flex";
+          countdownBox.style.display = 'none';
+          finalBtn.style.display = 'flex';
         }
       }, 1000);
-    }
-    
-    // دالة لإصلاح محاذاة إعلانات أدسنس
-    function fixAdAlignment() {
-      const isMobile = window.innerWidth <= 768;
     }
   </script>
 </body>
