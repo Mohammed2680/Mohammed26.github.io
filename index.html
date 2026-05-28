@@ -912,8 +912,12 @@
     let countdownStarted = false;
 
     document.addEventListener('DOMContentLoaded', () => {
+
       const userLang = navigator.language && navigator.language.startsWith('ar') ? 'ar' : 'en';
-setLanguage(userLang);
+
+      setLanguage(userLang);
+      runLoader();
+    });
 
     function runLoader() {
       const loader = document.getElementById('loader');
@@ -921,15 +925,21 @@ setLanguage(userLang);
       let progress = 0;
 
       const timer = setInterval(() => {
+
+
         progress = Math.min(progress + 8, 100);
+
         progressBar.style.width = progress + '%';
 
         if (progress >= 100) {
           clearInterval(timer);
+
           setTimeout(() => loader.classList.add('hide'), 260);
         }
+
       }, 130);
     }
+</script>
 
     function setLanguage(selectedLang) {
       lang = selectedLang;
