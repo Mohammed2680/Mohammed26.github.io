@@ -756,8 +756,8 @@
   <div id="occasionNotice" class="occasion-notice" aria-live="polite" aria-hidden="true">
     <div id="occasionIcon" class="occasion-icon">🐑</div>
     <span id="occasionText">عيد أضحى مبارك</span>
-    <div class="occasion-sub">وكل عام وأنتم بخير</div>
-    <button type="button" onclick="hideOccasion()">حسناً</button>
+    <div id="occasionSub" class="occasion-sub">وكل عام وأنتم بخير</div>
+    <button id="occasionBtn" type="button" onclick="hideOccasion()">حسناً</button>
   </div>
   <!-- OCCASION_NOTICE_END -->
 
@@ -1069,38 +1069,38 @@
       hour24 = Number(hour24);
       minute = Number(minute || 0);
 
-      // للتجربة فقط: أزل // من السطر التالي وسيظهر عيد الأضحى دائماً.
-      // return { icon: '🐑', text: 'عيد أضحى مبارك' };
+      // للتجربة فقط: أزل // من السطر التالي وسيظهر عيد الأضحى دائماً حسب لغة الزائر.
+      // return { icon: '🐑', textAr: 'عيد أضحى مبارك', textEn: 'Eid Al-Adha Mubarak' };
 
       if (hMonth === 10 && hDay >= 1 && hDay <= 5) {
-        return { icon: '🎉', text: 'عيد فطر مبارك' };
+        return { icon: '🎉', textAr: 'عيد فطر مبارك', textEn: 'Eid Al-Fitr Mubarak' };
       }
 
       // عيد الأضحى: من 10 إلى 13 ذي الحجة، ويمتد يوم 14 حتى 8:40 مساءً بتوقيت مكة.
       if (
         hMonth === 12 &&
         (
-          (hDay >= 10 && hDay <= 13) ||
+          (hDay >= 10 && hDay <= 14) ||
           (hDay === 14 && (hour24 < 20 || (hour24 === 20 && minute < 40)))
         )
       ) {
-        return { icon: '🐑', text: 'عيد أضحى مبارك' };
+        return { icon: '🐑', textAr: 'عيد أضحى مبارك', textEn: 'Eid Al-Adha Mubarak' };
       }
 
       if (hMonth === 1 && hDay === 1) {
-        return { icon: '🕋', text: 'عام هجري مبارك' };
+        return { icon: '🕋', textAr: 'عام هجري مبارك', textEn: 'Happy Hijri New Year' };
       }
 
       if (hMonth === 9 && hDay >= 1 && hDay <= 19) {
-        return { icon: '🌙', text: 'رمضان مبارك' };
+        return { icon: '🌙', textAr: 'رمضان مبارك', textEn: 'Ramadan Mubarak' };
       }
 
       if (hMonth === 9 && hDay >= 20) {
-        return { icon: '🤲', text: 'خواتم مباركة' };
+        return { icon: '🤲', textAr: 'خواتم مباركة', textEn: 'Blessed Last Days of Ramadan' };
       }
 
       if ((weekdayEn === 'thursday' && hour24 >= 18) || (weekdayEn === 'friday' && hour24 < 18)) {
-        return { icon: '🌸', text: 'جمعة مباركة' };
+        return { icon: '🌸', textAr: 'جمعة مباركة', textEn: 'Blessed Friday' };
       }
 
       return null;
@@ -1169,6 +1169,8 @@
       const notice = document.getElementById('occasionNotice');
       const text = document.getElementById('occasionText');
       const icon = document.getElementById('occasionIcon');
+      const sub = document.getElementById('occasionSub');
+      const btn = document.getElementById('occasionBtn');
 
       if (!notice || !text) return;
 
@@ -1184,7 +1186,16 @@
       if (!occasion) return;
 
       if (icon) icon.textContent = occasion.icon;
-      text.textContent = occasion.text;
+
+      if (lang === 'ar') {
+        text.textContent = occasion.textAr || occasion.text || '';
+        if (sub) sub.textContent = 'وكل عام وأنتم بخير';
+        if (btn) btn.textContent = 'حسناً';
+      } else {
+        text.textContent = occasion.textEn || occasion.text || '';
+        if (sub) sub.textContent = 'Wishing you joy and happiness';
+        if (btn) btn.textContent = 'OK';
+      }
       notice.classList.add('show');
       notice.setAttribute('aria-hidden', 'false');
 
