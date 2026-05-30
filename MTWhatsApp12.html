@@ -1157,7 +1157,7 @@
         hMonth === 12 &&
         (
           (hDay >= 10 && hDay <= 12) ||
-          (hDay === 13 && (hour24 < 18 || (hour24 === 18 && minute < 40)))
+          (hDay === 13 && (hour24 < 20 || (hour24 === 20 && minute < 40)))
         )
       ) {
         return { icon: "🐑", text: "عيد أضحى مبارك" };
