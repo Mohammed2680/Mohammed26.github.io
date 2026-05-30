@@ -975,9 +975,31 @@
     </div>
   </footer>
 
-  <script>
+<script>
     let lang = 'ar';
     let countdownStarted = false;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage('ar');
+      prepareOccasionMessage();
+      runLoader();
+    });
+
+    function runLoader() {
+      const loader = document.getElementById('loader');
+      const progressBar = document.getElementById('loaderBar');
+      let progress = 0;
+
+      const timer = setInterval(() => {
+        progress = Math.min(progress + 8, 100);
+        progressBar.style.width = progress + '%';
+
+        if (progress >= 100) {
+          clearInterval(timer);
+          setTimeout(() => { loader.classList.add('hide'); showOccasionAfterLoader(); }, 260);
+        }
+      }, 130);
+    }
 
 let occasionAutoHideTimer = null;
     let occasionCache = null;
