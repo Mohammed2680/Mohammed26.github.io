@@ -1198,25 +1198,36 @@
     }
 
     async function getOccasionMessage() {
-      const currentHour = new Date().getHours();
+    async function getOccasionMessage() {
+  const makkahNow = new Date(
+    new Date().toLocaleString("en-US", {
+      timeZone: "Asia/Riyadh"
+    })
+  );
 
-      try {
-        const response = await fetch("https://api.aladhan.com/v1/gToH", { cache: "no-store" });
-        if (!response.ok) throw new Error("Hijri API error");
+  const currentHour = makkahNow.getHours();
+  const makkahDate = makkahNow.toLocaleDateString("en-CA");
 
-        const result = await response.json();
-        const hijri = result?.data?.hijri;
-        const gregorian = result?.data?.gregorian;
+  try {
+    const response = await fetch(
+      `https://api.aladhan.com/v1/gToH/${makkahDate}`,
+      { cache: "no-store" }
+    );
 
-        const hDay = parseInt(hijri?.day, 10);
-        const hMonth = parseInt(hijri?.month?.number, 10);
-        const weekdayEn = String(gregorian?.weekday?.en || "").toLowerCase();
+    if (!response.ok) throw new Error("Hijri API error");
 
-        return pickOccasion(hDay, hMonth, weekdayEn, currentHour);
-      } catch (error) {
-        // احتياطياً عند فشل الاتصال بالـ API: يعتمد على تقويم الجهاز
-        return getLocalOccasionMessage();
-      }
+    const result = await response.json();
+    const hijri = result?.data?.hijri;
+    const gregorian = result?.data?.gregorian;
+
+    const hDay = parseInt(hijri?.day, 10);
+    const hMonth = parseInt(hijri?.month?.number, 10);
+    const weekdayEn = String(gregorian?.weekday?.en || "").toLowerCase();
+
+    return pickOccasion(hDay, hMonth, weekdayEn, currentHour);
+  } catch (error) {
+    return getLocalOccasionMessage();
+  }
     }
 
     async function showOccasionAfterLoader() {
