@@ -392,16 +392,8 @@
     }
 
     .meta-icon { color: var(--green-2); font-size: 18px; margin-bottom: 5px; }
-    .meta-value {
-    font-size: 30px;
-    font-weight: 900;
-}
-
-.meta-label {
-    font-size: 22px;
-    color: var(--muted);
-    font-weight: 700;
-}
+    .meta-value { font-size: 20px; font-weight: 900; }
+    .meta-label { font-size: 14px;  font-weight: 700; color: var(--muted); }
 
     .download-box,
     .telegram-box {
@@ -676,7 +668,7 @@
       .app-card, .features-card { border-radius: 24px; padding: 20px 14px; }
       .app-meta { gap: 7px; }
       .meta-item { min-height: 88px; padding: 10px 5px; }
-      .meta-value { font-size: 13px; }
+      .meta-value { font-size: 16px; }
       .meta-label { font-size: 11px; }
       .features-grid { grid-template-columns: 1fr; }
       .file-box .title { font-size: 16px; }
@@ -755,6 +747,53 @@
         scroll-behavior: auto !important;
       }
     }
+
+    /* META_BOX_SIZE_FIX_START */
+    .app-meta .meta-item {
+      min-height: 132px !important;
+      padding: 18px 10px !important;
+    }
+
+    .app-meta .meta-icon {
+      font-size: 24px !important;
+      margin-bottom: 8px !important;
+    }
+
+    .app-meta .meta-value {
+      font-size: 20px !important;
+      font-weight: 900 !important;
+      line-height: 1.15 !important;
+    }
+
+    .app-meta .meta-label {
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      color: var(--muted) !important;
+      line-height: 1.25 !important;
+      margin-top: 6px !important;
+    }
+
+    @media (max-width: 560px) {
+      .app-meta .meta-item {
+        min-height: 118px !important;
+        padding: 15px 6px !important;
+      }
+
+      .app-meta .meta-icon {
+        font-size: 21px !important;
+        margin-bottom: 6px !important;
+      }
+
+      .app-meta .meta-value {
+        font-size: 16px !important;
+      }
+
+      .app-meta .meta-label {
+        font-size: 11px !important;
+      }
+    }
+    /* META_BOX_SIZE_FIX_END */
+
   </style>
 </head>
 <body>
@@ -1088,7 +1127,7 @@
       if (
         hMonth === 12 &&
         (
-          (hDay >= 10 && hDay <= 14) ||
+          (hDay >= 10 && hDay <= 13) ||
           (hDay === 14 && (hour24 < 20 || (hour24 === 20 && minute < 40)))
         )
       ) {
