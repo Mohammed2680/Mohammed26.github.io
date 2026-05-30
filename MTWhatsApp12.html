@@ -1080,6 +1080,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       setLanguage('ar');
+      prepareOccasionMessage();
       runLoader();
     });
 
@@ -1124,14 +1125,62 @@
 
     /* OCCASION_NOTICE_START */
     let occasionAutoHideTimer = null;
+    let occasionCache = null;
+    let occasionPromise = null;
 
-    function getOccasionMessage() {
-      /* لإظهار عيد الأضحى الآن للتجربة، غيّر القيمة إلى false بعد التأكد */
-      const forceEidAdha = true;
-      if (forceEidAdha) return { icon: "🐑", text: "عيد أضحى مبارك" };
+    function prepareOccasionMessage() {
+      occasionPromise = getOccasionMessage()
+        .then((occasion) => {
+          occasionCache = occasion;
+          return occasion;
+        })
+        .catch(() => {
+          occasionCache = getLocalOccasionMessage();
+          return occasionCache;
+        });
+    }
 
+    function pickOccasion(hDay, hMonth, weekdayEn, hour24) {
+      hDay = Number(hDay);
+      hMonth = Number(hMonth);
+      weekdayEn = String(weekdayEn || "").toLowerCase();
+      hour24 = Number(hour24);
+
+      // عيد الفطر: من 1 شوال إلى 5 شوال
+      if (hMonth === 10 && hDay >= 1 && hDay <= 5) {
+        return { icon: "🎉", text: "عيد فطر مبارك" };
+      }
+
+      // عيد الأضحى: من 10 ذي الحجة إلى 15 ذي الحجة
+      if (hMonth === 12 && hDay >= 10 && hDay <= 15) {
+        return { icon: "🐑", text: "عيد أضحى مبارك" };
+      }
+
+      // بداية السنة الهجرية: يوم 1 محرم فقط
+      if (hMonth === 1 && hDay === 1) {
+        return { icon: "🌙", text: "عام هجري مبارك" };
+      }
+
+      // رمضان: من 1 إلى 19 رمضان مبارك، ومن 20 إلى آخر رمضان خواتم مباركة
+      if (hMonth === 9 && hDay >= 1 && hDay <= 19) {
+        return { icon: "🌙", text: "رمضان مبارك" };
+      }
+      if (hMonth === 9 && hDay >= 20) {
+        return { icon: "🤲", text: "خواتم مباركة" };
+      }
+
+      // الجمعة: من 6 مساء الخميس إلى 6 مساء الجمعة
+      if ((weekdayEn === "thursday" && hour24 >= 18) || (weekdayEn === "friday" && hour24 < 18)) {
+        return { icon: "🌸", text: "جمعة مباركة" };
+      }
+
+      return null;
+    }
+
+    function getLocalOccasionMessage() {
       const today = new Date();
-      const weekday = today.getDay();
+      const weekdayMap = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+      const weekdayEn = weekdayMap[today.getDay()];
       let hDay = 0;
       let hMonth = 0;
 
@@ -1141,23 +1190,52 @@
           month: "numeric"
         }).formatToParts(today);
 
-        hDay = Number(parts.find(p => p.type === "day").value);
-        hMonth = Number(parts.find(p => p.type === "month").value);
+        hDay = Number(parts.find(p => p.type === "day")?.value || 0);
+        hMonth = Number(parts.find(p => p.type === "month")?.value || 0);
       } catch (e) {}
 
-      if (hMonth === 12 && hDay >= 10 && hDay <= 13) return { icon: "🐑", text: "عيد أضحى مبارك" };
-      if (hMonth === 10 && hDay === 1) return { icon: "🎉", text: "عيد فطر مبارك" };
-      if (hMonth === 9 && hDay === 1) return { icon: "🌙", text: "رمضان مبارك" };
-      if (weekday === 5) return { icon: "🌸", text: "جمعة مباركة" };
-      return null;
+      return pickOccasion(hDay, hMonth, weekdayEn, today.getHours());
     }
 
-    function showOccasionAfterLoader() {
+    async function getOccasionMessage() {
+      const currentHour = new Date().getHours();
+
+      try {
+        const response = await fetch("https://api.aladhan.com/v1/gToH", { cache: "no-store" });
+        if (!response.ok) throw new Error("Hijri API error");
+
+        const result = await response.json();
+        const hijri = result?.data?.hijri;
+        const gregorian = result?.data?.gregorian;
+
+        const hDay = parseInt(hijri?.day, 10);
+        const hMonth = parseInt(hijri?.month?.number, 10);
+        const weekdayEn = String(gregorian?.weekday?.en || "").toLowerCase();
+
+        return pickOccasion(hDay, hMonth, weekdayEn, currentHour);
+      } catch (error) {
+        // احتياطياً عند فشل الاتصال بالـ API: يعتمد على تقويم الجهاز
+        return getLocalOccasionMessage();
+      }
+    }
+
+    async function showOccasionAfterLoader() {
       const notice = document.getElementById("occasionNotice");
       const text = document.getElementById("occasionText");
-      const occasion = getOccasionMessage();
+      if (!notice || !text) return;
 
-      if (!notice || !text || !occasion) return;
+      // تظهر التهنئة مباشرة بعد شاشة التحميل.
+      // إذا كان API جاهزاً نستخدمه، وإذا تأخر نستخدم التقويم المحلي فوراً كاحتياط.
+      let occasion = occasionCache || getLocalOccasionMessage();
+
+      if (!occasion && occasionPromise) {
+        occasion = await Promise.race([
+          occasionPromise,
+          new Promise(resolve => setTimeout(() => resolve(null), 120))
+        ]);
+      }
+
+      if (!occasion) return;
 
       const icon = document.getElementById("occasionIcon");
       if (icon) icon.textContent = occasion.icon;
