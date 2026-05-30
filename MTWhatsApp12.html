@@ -758,7 +758,7 @@
         scroll-behavior: auto !important;
       }
     }
-  
+
 
     /* OCCASION_NOTICE_START */
     .occasion-notice{
@@ -1140,19 +1140,26 @@
         });
     }
 
-    function pickOccasion(hDay, hMonth, weekdayEn, hour24) {
+    function pickOccasion(hDay, hMonth, weekdayEn, hour24, minute) {
       hDay = Number(hDay);
       hMonth = Number(hMonth);
       weekdayEn = String(weekdayEn || "").toLowerCase();
       hour24 = Number(hour24);
+      minute = Number(minute || 0);
 
       // عيد الفطر: من 1 شوال إلى 5 شوال
       if (hMonth === 10 && hDay >= 1 && hDay <= 5) {
         return { icon: "🎉", text: "عيد فطر مبارك" };
       }
 
-      // عيد الأضحى: من 10 ذي الحجة إلى ساعة 6:30 مساء في تاريخ 13 ذي الحجة
-      if (hMonth === 12 && hDay >= 10 && hDay <= 15) {
+      // عيد الأضحى: من 10 ذي الحجة إلى 13 ذي الحجة الساعة 6:40 مساءً بتوقيت مكة
+      if (
+        hMonth === 12 &&
+        (
+          (hDay >= 10 && hDay <= 12) ||
+          (hDay === 13 && (hour24 < 18 || (hour24 === 18 && minute < 40)))
+        )
+      ) {
         return { icon: "🐑", text: "عيد أضحى مبارك" };
       }
 
@@ -1177,8 +1184,16 @@
       return null;
     }
 
+    function getMakkahNow() {
+      return new Date(
+        new Date().toLocaleString("en-US", {
+          timeZone: "Asia/Riyadh"
+        })
+      );
+    }
+
     function getLocalOccasionMessage() {
-      const today = new Date();
+      const today = getMakkahNow();
       const weekdayMap = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
       const weekdayEn = weekdayMap[today.getDay()];
       let hDay = 0;
@@ -1187,16 +1202,17 @@
       try {
         const parts = new Intl.DateTimeFormat("en-u-ca-islamic", {
           day: "numeric",
-          month: "numeric"
+          month: "numeric",
+          timeZone: "Asia/Riyadh"
         }).formatToParts(today);
 
         hDay = Number(parts.find(p => p.type === "day")?.value || 0);
         hMonth = Number(parts.find(p => p.type === "month")?.value || 0);
       } catch (e) {}
 
-      return pickOccasion(hDay, hMonth, weekdayEn, today.getHours());
+      return pickOccasion(hDay, hMonth, weekdayEn, today.getHours(), today.getMinutes());
     }
-    
+
     async function getOccasionMessage() {
   const makkahNow = new Date(
     new Date().toLocaleString("en-US", {
