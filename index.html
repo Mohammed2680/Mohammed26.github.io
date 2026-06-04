@@ -1110,47 +1110,73 @@
     }
 
     function pickOccasion(hDay, hMonth, weekdayEn, hour24, minute) {
-      hDay = Number(hDay);
-      hMonth = Number(hMonth);
-      weekdayEn = String(weekdayEn || '').toLowerCase();
-      hour24 = Number(hour24);
-      minute = Number(minute || 0);
+  hDay = Number(hDay);
+  hMonth = Number(hMonth);
+  weekdayEn = String(weekdayEn || '').toLowerCase();
+  hour24 = Number(hour24);
+  minute = Number(minute || 0);
 
-      // للتجربة فقط: أزل // من السطر التالي وسيظهر عيد الأضحى دائماً حسب لغة الزائر.
-      // return { icon: '🐑', textAr: 'عيد أضحى مبارك', textEn: 'Eid Al-Adha Mubarak' };
+  if (hMonth === 10 && hDay >= 1 && hDay <= 5) {
+    return {
+      icon: '🎉',
+      textAr: 'عيد فطر مبارك',
+      textEn: 'Eid Al-Fitr Mubarak',
+      subAr: 'وكل عام وأنتم بخير',
+      subEn: 'Wishing you joy and happiness'
+    };
+  }
 
-      if (hMonth === 10 && hDay >= 1 && hDay <= 5) {
-        return { icon: '🎉', textAr: 'عيد فطر مبارك', textEn: 'Eid Al-Fitr Mubarak' };
-      }
+  if (hMonth === 12 && hDay >= 10 && hDay <= 14) {
+    return {
+      icon: '🐑',
+      textAr: 'عيد أضحى مبارك',
+      textEn: 'Eid Al-Adha Mubarak',
+      subAr: 'وكل عام وأنتم بخير',
+      subEn: 'Wishing you joy and happiness'
+    };
+  }
 
-      // عيد الأضحى: من 10 إلى 13 ذي الحجة، ويمتد يوم 16 حتى 8:40 مساءً بتوقيت مكة.
-      if (
-        hMonth === 12 &&
-        (
-          (hDay >= 10 && hDay <= 16) ||
-          (hDay === 16 && (hour24 < 20 || (hour24 === 20 && minute < 40)))
-        )
-      ) {
-        return { icon: '🐑', textAr: 'عيد أضحى مبارك', textEn: 'Eid Al-Adha Mubarak' };
-      }
+  if (hMonth === 1 && hDay === 1) {
+    return {
+      icon: '🕋',
+      textAr: 'عام هجري مبارك',
+      textEn: 'Happy Hijri New Year',
+      subAr: 'وكل عام وأنتم بخير',
+      subEn: 'Wishing you a blessed year'
+    };
+  }
 
-      if (hMonth === 1 && hDay === 1) {
-        return { icon: '🕋', textAr: 'عام هجري مبارك', textEn: 'Happy Hijri New Year' };
-      }
+  if (hMonth === 9 && hDay >= 1 && hDay <= 19) {
+    return {
+      icon: '🌙',
+      textAr: 'رمضان مبارك',
+      textEn: 'Ramadan Mubarak',
+      subAr: 'وكل عام وأنتم بخير',
+      subEn: 'Wishing you a blessed Ramadan'
+    };
+  }
 
-      if (hMonth === 9 && hDay >= 1 && hDay <= 19) {
-        return { icon: '🌙', textAr: 'رمضان مبارك', textEn: 'Ramadan Mubarak' };
-      }
+  if (hMonth === 9 && hDay >= 20) {
+    return {
+      icon: '🤲',
+      textAr: 'خواتم مباركة',
+      textEn: 'Blessed Last Days of Ramadan',
+      subAr: 'اللهم تقبل منا ومنكم صالح الأعمال',
+      subEn: 'May Allah accept our good deeds'
+    };
+  }
 
-      if (hMonth === 9 && hDay >= 20) {
-        return { icon: '🤲', textAr: 'خواتم مباركة', textEn: 'Blessed Last Days of Ramadan' };
-      }
+  if ((weekdayEn === 'thursday' && hour24 >= 18) || (weekdayEn === 'friday' && hour24 < 18)) {
+    return {
+      icon: '🌸',
+      textAr: 'جمعة مباركة',
+      textEn: 'Blessed Friday',
+      subAr: 'اللهم صل وسلم على نبينا محمد',
+      subEn: 'May peace and blessings be upon Prophet Muhammad'
+    };
+  }
 
-      if ((weekdayEn === 'thursday' && hour24 >= 18) || (weekdayEn === 'friday' && hour24 < 18)) {
-        return { icon: '🌸', textAr: 'جمعة مباركة', textEn: 'Blessed Friday' };
-      }
-
-      return null;
+  return null;
     }
 
     function getMakkahNow() {
@@ -1235,13 +1261,13 @@
       if (icon) icon.textContent = occasion.icon;
 
       if (lang === 'ar') {
-        text.textContent = occasion.textAr || occasion.text || '';
-        if (sub) sub.textContent = 'وكل عام وأنتم بخير';
-        if (btn) btn.textContent = 'حسناً';
-      } else {
-        text.textContent = occasion.textEn || occasion.text || '';
-        if (sub) sub.textContent = 'Wishing you joy and happiness';
-        if (btn) btn.textContent = 'OK';
+  text.textContent = occasion.textAr || occasion.text || '';
+  if (sub) sub.textContent = occasion.subAr || '';
+  if (btn) btn.textContent = 'حسناً';
+} else {
+  text.textContent = occasion.textEn || occasion.text || '';
+  if (sub) sub.textContent = occasion.subEn || '';
+  if (btn) btn.textContent = 'OK';
       }
       notice.classList.add('show');
       notice.setAttribute('aria-hidden', 'false');
