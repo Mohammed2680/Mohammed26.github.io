@@ -1166,6 +1166,16 @@
     };
   }
 
+       if (hMonth === 3 && ((hDay === 11 && hour24 >= 18) || hDay === 12)) {
+        return {
+          icon: 'ﷺ',
+          textAr: 'اللهم صل وسلم على سيدنا محمد',
+          textEn: 'Peace and Blessings Be Upon Our Prophet Mohammed',
+          subAr: 'مبارك عليكم المولد النبوي الشريف',
+          subEn: 'Blessed to you All Mawlid Al-Nabawi Al-Sharif!.'
+        };
+       }
+      
   if ((weekdayEn === 'thursday' && hour24 >= 18) || (weekdayEn === 'friday' && hour24 < 18)) {
     return {
       icon: '🌸',
