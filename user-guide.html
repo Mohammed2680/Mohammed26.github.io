@@ -1,600 +1,1044 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <title>دليل الاستخدام - واتساب محمد</title>
-    <link rel="icon" href="https://instagold.download/favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="robots" content="index,follow"/>
-    <meta name="description" content="دليل شامل لاستخدام واتساب محمد الطواف. تعلم كيفية تفعيل ميزات الخصوصية، وتنزيل الحالات، وتخصيص الواجهة، والمزيد."/>
-    <meta name="keywords" content="MTWhatsApp, دليل استخدام, user guide, واتساب محمد الطواف, شرح"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="GoldFire"/>
-    <meta property="og:locale" content="ar_AR"/>
-    <meta property="og:url" content="https://wa2.goldapk.app/user-guide.html"/>
-    <meta property="og:title" content="دليل الاستخدام - واتساب محمد"/>
-    <meta property="og:description" content="دليلك الكامل لاستكشاف ميزات واتساب محمد الفريدة."/>
+  <title>دليل الاستخدام - MTWhatsApp</title>
 
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@GoldFire"/>
-    <meta name="twitter:title" content="دليل الاستخدام - واتساب الذهبي"/>
-    <meta name="twitter:description" content="دليلك الكامل لاستكشاف ميزات واتساب محمد الطواف الفريدة."/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <meta itemprop="name" content="دليل الاستخدام - واتساب محمد الطواف"/>
-    <meta itemprop="description" content="دليلك الكامل لاستكشاف ميزات واتساب محمد الطواف الفريدة."/>
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="دليل شامل لاستخدام MTWhatsApp وتفعيل ميزات الخصوصية وتنزيل الحالات وتخصيص الواجهة." />
+  <meta name="keywords" content="MTWhatsApp, دليل الاستخدام, User Guide, واتساب محمد" />
+  <meta name="theme-color" content="#075E54" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MTWhatsApp" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:title" content="دليل الاستخدام - MTWhatsApp" />
+  <meta property="og:description" content="دليلك الكامل لاستخدام ميزات MTWhatsApp." />
+  <meta property="og:image" content="app_icon2.png" />
 
-    
-    <style>
-        :root {
-            --gold-primary: #25D366;
-            --gold-secondary: #128C7E;
-            --gold-dark: #075E54;
-            --text-dark: #222;
-            --text-light: #f8f8f8;
-            --bg-light: #f9f9f9;
-            --shadow: 0 4px 12px rgba(0,0,0,0.08);
-            --transition: all 0.3s ease;
-        }
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="دليل الاستخدام - MTWhatsApp" />
+  <meta name="twitter:description" content="دليلك الكامل لاستخدام ميزات MTWhatsApp." />
+  <meta name="twitter:image" content="app_icon2.png" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Tajawal', sans-serif;
-            font-weight: 500;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, #e6ffed 0%, #fff 100%);
-            min-height: 100vh;
-            position: relative;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-        [data-lang] { display: none; }
-        .show-ar { display: block; }
-        .show-en { display: block; }
-        [dir="rtl"] .show-en, [dir="ltr"] .show-ar { display: none; }
+  <style>
+    :root {
+      --green: #25D366;
+      --green-2: #00a884;
+      --green-dark: #075E54;
+      --green-deep: #043f38;
+      --text: #13211e;
+      --muted: #60716c;
+      --glass: rgba(255,255,255,.58);
+      --border: rgba(255,255,255,.62);
+      --shadow: 0 20px 55px rgba(0,96,76,.14);
+      --shadow-hover: 0 28px 70px rgba(0,96,76,.22);
+      --radius: 28px;
+      --fast: 220ms ease;
+    }
 
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 20px;
-            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 100%);
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: white;
-            font-weight: 700;
-            font-size: 18px;
-            text-decoration: none;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .logo-icon {
-            font-size: 20px;
-        }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text);
+      font-family: "Tajawal", system-ui, sans-serif;
+      font-weight: 500;
+      line-height: 1.75;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(37,211,102,.24), transparent 30%),
+        radial-gradient(circle at 88% 12%, rgba(0,168,132,.22), transparent 32%),
+        radial-gradient(circle at 50% 100%, rgba(7,94,84,.18), transparent 38%),
+        linear-gradient(135deg, #effff6 0%, #ffffff 48%, #eafff8 100%);
+    }
 
-        .lang-switcher {
-            display: flex;
-            gap: 8px;
-        }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 88%);
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 88%);
+    }
 
-        .lang-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .lang-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-        .header {
-            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 100%);
-            text-align: center;
-            padding: 50px 15px;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
+    button {
+      font: inherit;
+    }
 
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    [data-lang] {
+      display: none;
+    }
 
-        h1 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
+    .glass,
+    .top-bar,
+    .guide-section,
+    .guide-item,
+    .tip-box {
+      backdrop-filter: blur(10px) saturate(135%);
+      -webkit-backdrop-filter: blur(10px) saturate(135%);
+    }
 
-        .subtitle {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .main-content {
-            max-width: 1000px;
-            margin: 0 auto 50px;
-            padding: 0 15px;
-        }
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px clamp(14px, 3vw, 34px);
+      background: rgba(7,94,84,.64);
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
 
-        .guide-section {
-            background: white;
-            border-radius: 18px;
-            box-shadow: var(--shadow);
-            padding: 25px;
-            margin-bottom: 25px;
-        }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 900;
+    }
 
-        .section-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text-dark);
-            text-align: center;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 12px;
-        }
-        
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold-secondary), var(--gold-primary));
-            border-radius: 2px;
-        }
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--green), var(--green-2), var(--green-dark));
+      box-shadow: 0 10px 24px rgba(37,211,102,.25);
+    }
 
-        [dir="rtl"] .section-title::after {
-            left: auto;
-            right: 50%;
-            transform: translateX(50%);
-        }
-        
-        .guide-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px dashed #ddd;
-        }
-        
-        .guide-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .item-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--gold-dark);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .item-title i {
-            color: var(--gold-primary);
-            font-size: 24px;
-        }
-        
-        .item-content {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.8;
-            padding-right: 34px;
-        }
-        
-        .item-content p {
-            margin-bottom: 10px;
-        }
+    .btn-control {
+      width: auto;
+      height: auto;
+      min-width: 0;
+      min-height: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,.32);
+      color: #fff;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 1.2;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      transition: transform var(--fast), background var(--fast);
+      font-family: inherit;
+    }
 
-        .item-content ul, .item-content ol {
-            margin: 10px 0 15px 35px;
-            list-style: disc;
-        }
-        
-        [dir="ltr"] .item-content ul, [dir="ltr"] .item-content ol {
-             margin-left: 35px;
-             margin-right: 0;
-        }
+    .btn-control i {
+      font-size: 14px;
+      line-height: 1;
+    }
 
-        .item-content ol {
-            list-style: decimal;
-        }
-        
-        .item-content li {
-            margin-bottom: 8px;
-        }
-        
-        .important-note {
-            background: #fff3cd;
-            color: #664d03;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #ffecb5;
-            margin-top: 15px;
-        }
-        
-        .important-note i {
-            color: #ffc107;
-            margin-left: 8px;
-        }
+    .btn-control:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.26);
+    }
 
-        .footer {
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-            color: #aaa;
-            padding: 40px 15px 25px;
-            margin-top: 40px;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 35px;
-        }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 52px 16px 92px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 30% 10%, rgba(255,255,255,.25), transparent 24%),
+        linear-gradient(135deg, #075E54 0%, #009879 58%, #20d875 100%);
+    }
 
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: white;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        
-        .footer-desc {
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 12px;
-            margin-top: 18px;
-        }
-        
-        .footer-links a {
-            text-decoration: none;
-            color: #aaa;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            transition: var(--transition);
-            font-size: 14px;
-        }
-        
-        .footer-links a:hover {
-            color: var(--gold-primary);
-        }
-        
-        .footer-section-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 8px;
-        }
-        
-        .footer-section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 45px;
-            height: 3px;
-            background: var(--gold-primary);
-        }
-        
-        [dir="ltr"] .footer-section-title::after {
-            right: auto;
-            left: 0;
-        }
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+    }
 
-        .copyright {
-            text-align: center;
-            padding-top: 25px;
-            margin-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
-            color: #777;
-        }
-        
-        .disclaimer {
-            font-size: 12px;
-            color: #777;
-            margin-top: 12px;
-            line-height: 1.7;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 28px;
-            }
-            .subtitle {
-                font-size: 16px;
-            }
-            .section-title {
-                font-size: 22px;
-            }
-            .item-title {
-                font-size: 18px;
-            }
-            .item-content {
-                font-size: 14px;
-            }
-            .footer-logo {
-                font-size: 20px;
-            }
-            .footer-desc {
-                font-size: 14px;
-            }
-        }
-    </style>
+    .hero::before {
+      width: 230px;
+      height: 230px;
+      top: -80px;
+      right: -70px;
+    }
+
+    .hero::after {
+      width: 320px;
+      height: 320px;
+      left: -130px;
+      bottom: -120px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: auto;
+    }
+
+    .hero-icon {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 16px;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 24px;
+      background: rgba(255,255,255,.15);
+      box-shadow: 0 18px 42px rgba(0,0,0,.13);
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 50px);
+      line-height: 1.2;
+      font-weight: 900;
+      margin-bottom: 12px;
+      text-shadow: 0 12px 30px rgba(0,0,0,.18);
+    }
+
+    .hero-subtitle {
+      max-width: 650px;
+      margin: auto;
+      color: rgba(255,255,255,.92);
+      font-size: clamp(15px, 2vw, 18px);
+    }
+
+    .main-content {
+      width: min(1040px, calc(100% - 30px));
+      margin: -56px auto 0;
+      position: relative;
+      z-index: 5;
+    }
+
+    .guide-section {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(22px, 4vw, 34px);
+      border-radius: var(--radius);
+      background: var(--glass);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    .guide-section::before,
+    .tip-box::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.94), transparent);
+    }
+
+    .section-title {
+      position: relative;
+      text-align: center;
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 25px;
+      padding-bottom: 13px;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      width: 76px;
+      height: 4px;
+      border-radius: 99px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, var(--green-dark), var(--green-2), var(--green));
+    }
+
+    .guide-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .guide-item {
+      position: relative;
+      overflow: hidden;
+      padding: 21px;
+      border-radius: 20px;
+      background: rgba(240,252,249,.76);
+      border: 1px solid rgba(37,211,102,.18);
+      transition: transform var(--fast), box-shadow var(--fast), background var(--fast);
+    }
+
+    .guide-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 13px 30px rgba(0,96,76,.12);
+      background: rgba(232,249,245,.94);
+    }
+
+    .item-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .item-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: #fff;
+      font-size: 19px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-2), var(--green));
+      box-shadow: 0 8px 18px rgba(0,168,132,.22);
+    }
+
+    .item-title {
+      color: var(--green-dark);
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .item-content {
+      color: #536762;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .item-content p {
+      margin-bottom: 10px;
+    }
+
+    .item-content ol,
+    .item-content ul {
+      padding-inline-start: 25px;
+      margin-top: 8px;
+    }
+
+    .item-content li {
+      margin-bottom: 8px;
+    }
+
+    .item-content strong {
+      color: #1e3e37;
+    }
+
+    .path-box {
+      margin-top: 14px;
+      padding: 13px 15px;
+      border-radius: 15px;
+      color: #245047;
+      font-size: 14px;
+      font-weight: 800;
+      background: rgba(255,255,255,.58);
+      border: 1px dashed rgba(0,168,132,.32);
+    }
+
+    .path-box i {
+      margin-inline-end: 7px;
+      color: var(--green-2);
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    @media (min-width: 720px) {
+      .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .tip-box {
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.52);
+      border: 1px solid rgba(37,211,102,.18);
+    }
+
+    .tip-heading {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 9px;
+      color: var(--green-dark);
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .tip-heading i {
+      color: #e6a700;
+      font-size: 19px;
+    }
+
+    .tip-box p {
+      color: #536762;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .support-box {
+      text-align: center;
+      margin-top: 4px;
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.52);
+      border: 1px solid rgba(37,211,102,.18);
+    }
+
+    .support-box p {
+      color: #48615b;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .support-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-2), var(--green));
+      box-shadow: 0 10px 22px rgba(0,168,132,.22);
+      transition: transform var(--fast), box-shadow var(--fast);
+    }
+
+    .support-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0,168,132,.28);
+    }
+
+    .footer {
+      margin-top: 46px;
+      padding: 44px 16px 24px;
+      color: rgba(255,255,255,.90);
+      background:
+        radial-gradient(circle at 80% 0%, rgba(37,211,102,.18), transparent 30%),
+        linear-gradient(135deg, #031f1c, var(--green-dark), var(--green-2));
+    }
+
+    .footer-content {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1.15fr .85fr;
+      }
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    .footer-desc {
+      max-width: 640px;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .footer-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 10px;
+      border-radius: 14px;
+      color: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+      transition: background var(--fast), transform var(--fast);
+    }
+
+    .footer-links a:hover {
+      background: rgba(255,255,255,.15);
+      transform: translateY(-2px);
+    }
+
+    .footer-section-title {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      position: relative;
+    }
+
+    .footer-section-title::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 48px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--green);
+    }
+
+    html[dir="ltr"] .footer-section-title::after {
+      right: auto;
+      left: 0;
+    }
+
+    .copyright {
+      width: min(1100px, 100%);
+      margin: 28px auto 0;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      text-align: center;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+    }
+
+    @media (max-width: 560px) {
+      .top-bar {
+        padding-inline: 12px;
+      }
+
+      .logo {
+        font-size: 14px;
+      }
+
+      .logo-icon {
+        width: 31px;
+        height: 31px;
+      }
+
+      .btn-control {
+        padding: 7px 12px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding-top: 38px;
+        padding-bottom: 82px;
+      }
+
+      .main-content {
+        width: min(100% - 22px, 1040px);
+      }
+
+      .guide-section {
+        border-radius: 24px;
+        padding: 20px 14px;
+      }
+
+      .guide-item {
+        padding: 17px;
+      }
+
+      .item-heading {
+        align-items: flex-start;
+      }
+
+      .item-title {
+        font-size: 17px;
+      }
+
+      .item-content {
+        font-size: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
-<body>
-    
-    <div class="top-bar">
-        <a href="index.html" class="logo">
-            <i class="fab fa-whatsapp logo-icon"></i>
-            <span data-lang="ar">واتساب محمد</span>
-            <span data-lang="en">MTWhatsApp</span>
-        </a>
-        <div class="lang-switcher">
-            <button class="lang-btn" onclick="setLanguage('ar')">🇸🇦 عربي</button>
-            <button class="lang-btn" onclick="setLanguage('en')">🇺🇸 English</button>
-        </div>
-    </div>
-    
-    <header class="header">
-        <div class="header-content">
-            <h1 data-lang="ar">دليل الاستخدام</h1>
-            <h1 data-lang="en">User Guide</h1>
-            <p class="subtitle" data-lang="ar">دليلك الشامل للتحكم الكامل في واتساب محمد الطواف</p>
-            <p class="subtitle" data-lang="en">Your comprehensive guide to full control over MTWhatsApp</p>
-        </div>
-    </header>
-    
-    <div class="main-content">
-        
-        <div class="guide-section">
-            <h2 class="section-title" data-lang="ar">1. خيارات الخصوصية المتقدمة</h2>
-            <h2 class="section-title" data-lang="en">1. Advanced Privacy Options</h2>
-            
-            <div class="guide-list">
-                
-                <div class="guide-item">
-                    <h3 class="item-title"><i class="fas fa-user-secret"></i> <span data-lang="ar">إخفاء الظهور</span><span data-lang="en">Hide Online Status</span></h3>
-                    <div class="item-content" data-lang="ar">
-                        <p>تسمح لك هذه الميزة باستخدام التطبيق بحرية دون أن يعرف الآخرون أنك متصل. لتفعيلها:</p>
-                        <ol>
-                            <li>اضغط على النقاط الثلاث في الزاوية العلوية (القائمة).</li>
-                            <li>اختر <strong>"إضافات محمد الطواف"</strong>.</li>
-                            <li>ثم اذهب إلى <strong>"الخصوصية والأمان"</strong>.</li>
-                            <li>فعل خيار <strong>"إخفاء آخر ظهور"</strong>.</li>
-                        </ol>
-                    </div>
-                    <div class="item-content" data-lang="en">
-                        <p>This feature allows you to use the app freely without others knowing you are online. To activate it:</p>
-                        <ol>
-                            <li>Tap the three dots in the top corner (Menu).</li>
-                            <li>Select <strong>"MTWA Settings"</strong>.</li>
-                            <li>Then go to <strong>"Privacy and Security"</strong>.</li>
-                            <li>Enable the <strong>"Hide last seen"</strong> option.</li>
-                        </ol>
-                    </div>
-                </div>
-                
-                <div class="guide-item">
-                    <h3 class="item-title"><i class="fas fa-lock-open"></i> <span data-lang="ar">منع حذف الرسائل</span><span data-lang="en">Anti-Delete Messages</span></h3>
-                    <div class="item-content" data-lang="ar">
-                        <p>تتيح لك هذه الميزة قراءة الرسائل التي يقوم المرسلون بحذفها بعد إرسالها. لتمكينها:</p>
-                        <ol>
-                            <li>انتقل إلى <strong>"إضافات محمد الطواف"</strong>.</li>
-                            <li>اختر <strong>"الخصوصية والأمان"</strong>.</li>
-                            <li>قم بتفعيل خيار <strong>"منع حذف الرسائل"</strong>.</li>
-                        </ol>
-                    </div>
-                    <div class="item-content" data-lang="en">
-                        <p>This feature allows you to read messages that senders delete after sending. To enable it:</p>
-                        <ol>
-                            <li>Go to <strong>"MTWA Settings"</strong>.</li>
-                            <li>Select <strong>"Privacy and Security"</strong>.</li>
-                            <li>Enable the <strong>"Anti-delete messages"</strong> option.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="guide-section">
-            <h2 class="section-title" data-lang="ar">2. الميزات الإضافية</h2>
-            <h2 class="section-title" data-lang="en">2. Additional Features</h2>
-            
-            <div class="guide-list">
-                
-                <div class="guide-item">
-                    <h3 class="item-title"><i class="fas fa-download"></i> <span data-lang="ar">تنزيل الحالات</span><span data-lang="en">Status Download</span></h3>
-                    <div class="item-content" data-lang="ar">
-                        <p>لم يعد عليك أن تطلب من أصدقائك إرسال حالاتهم لك. الآن يمكنك تنزيل أي حالة (صورة أو فيديو) مباشرةً:</p>
-                        <ol>
-                            <li>افتح حالة الصديق الذي تريد حفظها.</li>
-                            <li>ستجد أيقونة تنزيل في الزاوية السفلية من الشاشة.</li>
-                            <li>اضغط على الأيقونة وسيتم حفظ الحالة في معرض الصور الخاص بك.</li>
-                        </ol>
-                    </div>
-                    <div class="item-content" data-lang="en">
-                        <p>You no longer have to ask your friends to send you their statuses. Now you can download any status (image or video) directly:</p>
-                        <ol>
-                            <li>Open the friend's status you want to save.</li>
-                            <li>You will find a download icon in the bottom corner of the screen.</li>
-                            <li>Tap the icon, and the status will be saved to your gallery.</li>
-                        </ol>
-                    </div>
-                </div>
-                
-                <div class="guide-item">
-                    <h3 class="item-title"><i class="fas fa-palette"></i> <span data-lang="ar">تخصيص الواجهة</span><span data-lang="en">Interface Customization</span></h3>
-                    <div class="item-content" data-lang="ar">
-                        <p>امنح تطبيقك مظهرًا فريدًا من خلال تخصيص الألوان والخطوط والأيقونات:</p>
-                        <ol>
-                            <li>اذهب إلى <strong>"إضافات محمد الطواف"</strong>.</li>
-                            <li>اختر <strong>"الثيمات"</strong> أو <strong>"الواجهة"</strong>.</li>
-                            <li>يمكنك الاختيار من بين مئات الثيمات الجاهزة أو تخصيص كل جزء بنفسك.</li>
-                        </ol>
-                    </div>
-                    <div class="item-content" data-lang="en">
-                        <p>Give your app a unique look by customizing colors, fonts, and icons:</p>
-                        <ol>
-                            <li>Go to <strong>"MTWA Settings"</strong>.</li>
-                            <li>Select <strong>"Themes"</strong> or <strong>"Interface"</strong>.</li>
-                            <li>You can choose from hundreds of ready-made themes or customize each part yourself.</li>
-                        </ol>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        <div class="guide-section">
-            <h2 class="section-title" data-lang="ar">3. نصائح مهمة</h2>
-            <h2 class="section-title" data-lang="en">3. Important Tips</h2>
-            
-            <div class="guide-item">
-                <div class="important-note" data-lang="ar">
-                    <p><i class="fas fa-exclamation-triangle"></i><strong>تحديثات التطبيق:</strong> تأكد دائمًا من تحديث واتساب محمد الطواف إلى أحدث إصدار من موقعنا الرسمي لضمان حصولك على أحدث الميزات والحماية من الحظر.</p>
-                </div>
-                <div class="important-note" data-lang="en">
-                    <p><i class="fas fa-exclamation-triangle"></i><strong>App Updates:</strong> Always make sure to update MTWhatsApp to the latest version from our official website to ensure you get the newest features and anti-ban protection.</p>
-                </div>
-            </div>
-            
-            <div class="guide-item">
-                <div class="important-note" data-lang="ar">
-                    <p><i class="fas fa-exclamation-triangle"></i><strong>النسخ الاحتياطي:</strong> قبل تثبيت أي تحديث، يُنصح دائمًا بعمل نسخة احتياطية لمحادثاتك من خلال إعدادات التطبيق لضمان عدم فقدان أي بيانات.</p>
-                </div>
-                <div class="important-note" data-lang="en">
-                    <p><i class="fas fa-exclamation-triangle"></i><strong>Backup:</strong> Before installing any update, it is always recommended to back up your chats through the app settings to ensure you don't lose any data.</p>
-                </div>
-            </div>
-            
-        </div>
-        
-    </div>
-    
-    <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <div class="footer-logo">
-                    <i class="fab fa-whatsapp"></i>
-                    <span data-lang="ar">واتساب محمد الطواف</span>
-                    <span data-lang="en">MTWhatsApp</span>
-                </div>
-                <p class="footer-desc" data-lang="ar">
-                    نسخة محسنة من تطبيق واتساب مع ميزات فريدة غير موجودة في التطبيق الرسمي.
-                    نسعى لتقديم أفضل تجربة مستخدم مع الحفاظ على الأمان والخصوصية.
-                </p>
-                <p class="footer-desc" data-lang="en">
-                    An enhanced version of the WhatsApp app with unique features not available in the official app.
-                    We strive to provide the best user experience while maintaining security and privacy.
-                </p>
-                <div class="footer-links">
-                    <a href="/privacy-policy.html"><i class="fas fa-shield-alt"></i> <span data-lang="ar">الأمان والخصوصية</span><span data-lang="en">Security & Privacy</span></a>
-                    <a href="/faq.html"><i class="fas fa-question-circle"></i> <span data-lang="ar">الأسئلة الشائعة</span><span data-lang="en">FAQ</span></a>
-                    <a href="/terms.html"><i class="fas fa-book"></i> <span data-lang="ar">الشروط والأحكام</span><span data-lang="en">Terms & Conditions</span></a>
-                    <a href="/about.html"><i class="fas fa-envelope"></i> <span data-lang="ar">اتصل بنا</span><span data-lang="en">Contact Us</span></a>
-                </div>
-            </div>
-            
-            <div>
-                <h3 class="footer-section-title" data-lang="ar">روابط مفيدة</h3>
-                <h3 class="footer-section-title" data-lang="en">Useful Links</h3>
-                <div class="footer-links">
-                    <a href="https://t.me/mtwhatsapp"><i class="fab fa-telegram"></i> <span data-lang="ar">قناة التليجرام</span><span data-lang="en">Telegram Channel</span></a>
-                    <a href="/user-guide.html"><i class="fab fa-youtube"></i> <span data-lang="ar">دليل الاستخدام</span><span data-lang="en">User Guide</span></a>
-                    <a href="https://www.mtaltawaf.com"><i class="fas fa-mobile-alt"></i> <span data-lang="ar">تطبيقات أخرى</span><span data-lang="en">Other Apps</span></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2026 MTMODS. <span data-lang="ar">جميع الحقوق محفوظة</span><span data-lang="en">All rights reserved</span></p>
-        </div>
-    </footer>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const userLang = navigator.language.startsWith("ar") ? "ar" : "en";
-            setLanguage(userLang);
-        });
 
-        function setLanguage(selectedLang) {
-            document.documentElement.lang = selectedLang;
-            document.documentElement.dir = selectedLang === 'ar' ? 'rtl' : 'ltr';
-            
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = 'none';
-            });
-            
-            document.querySelectorAll(`[data-lang="${selectedLang}"]`).forEach(el => {
-                el.style.display = 'block';
-            });
-            
-            if (selectedLang === 'ar') {
-                document.querySelectorAll('.show-ar').forEach(el => el.style.display = 'block');
-                document.querySelectorAll('.show-en').forEach(el => el.style.display = 'none');
-            } else {
-                document.querySelectorAll('.show-ar').forEach(el => el.style.display = 'none');
-                document.querySelectorAll('.show-en').forEach(el => el.style.display = 'block');
-            }
-        }
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b69bc24a9521a5e',t:'MTc2NzE4MzY2Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"56560dc6fa944a5fada5db1d86d9906a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<body>
+  <div class="top-bar">
+    <a href="index.html" class="logo" aria-label="MTWhatsApp">
+      <i class="fab fa-whatsapp logo-icon"></i>
+      <span>MTWhatsApp</span>
+    </a>
+
+    <div class="controls">
+      <button class="btn-control" type="button" onclick="toggleLang()" aria-label="Change language">
+        <span id="langLabel">EN</span>
+        <i class="fas fa-globe"></i>
+      </button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-icon">
+        <i class="fas fa-book-open"></i>
+      </div>
+
+      <h1 data-lang="ar">دليل الاستخدام</h1>
+      <h1 data-lang="en">User Guide</h1>
+
+      <p class="hero-subtitle" data-lang="ar">
+        دليلك الشامل لاستخدام أهم ميزات MTWhatsApp والتحكم بخيارات الخصوصية والتخصيص.
+      </p>
+
+      <p class="hero-subtitle" data-lang="en">
+        Your complete guide to using MTWhatsApp features, privacy controls, and customization options.
+      </p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="guide-section glass">
+      <h2 class="section-title" data-lang="ar">خيارات الخصوصية المتقدمة</h2>
+      <h2 class="section-title" data-lang="en">Advanced Privacy Options</h2>
+
+      <div class="guide-list">
+        <article class="guide-item">
+          <div class="item-heading">
+            <div class="item-icon"><i class="fas fa-user-secret"></i></div>
+            <h3 class="item-title" data-lang="ar">إخفاء آخر ظهور</h3>
+            <h3 class="item-title" data-lang="en">Hide Last Seen</h3>
+          </div>
+
+          <div class="item-content" data-lang="ar">
+            <p>تسمح لك هذه الميزة باستخدام التطبيق دون إظهار آخر وقت كنت فيه متصلًا.</p>
+            <ol>
+              <li>افتح القائمة من النقاط الثلاث.</li>
+              <li>اختر <strong>إضافات محمد الطواف</strong>.</li>
+              <li>انتقل إلى <strong>الخصوصية والأمان</strong>.</li>
+              <li>فعّل خيار <strong>إخفاء آخر ظهور</strong>.</li>
+            </ol>
+
+            <div class="path-box">
+              <i class="fas fa-route"></i>
+              إضافات محمد الطواف ← الخصوصية والأمان ← إخفاء آخر ظهور
+            </div>
+          </div>
+
+          <div class="item-content" data-lang="en">
+            <p>This feature lets you use the app without showing your last active time.</p>
+            <ol>
+              <li>Open the three-dot menu.</li>
+              <li>Select <strong>MTWA Settings</strong>.</li>
+              <li>Go to <strong>Privacy and Security</strong>.</li>
+              <li>Enable <strong>Hide Last Seen</strong>.</li>
+            </ol>
+
+            <div class="path-box">
+              <i class="fas fa-route"></i>
+              MTWA Settings → Privacy and Security → Hide Last Seen
+            </div>
+          </div>
+        </article>
+
+        <article class="guide-item">
+          <div class="item-heading">
+            <div class="item-icon"><i class="fas fa-lock-open"></i></div>
+            <h3 class="item-title" data-lang="ar">منع حذف الرسائل</h3>
+            <h3 class="item-title" data-lang="en">Anti-Delete Messages</h3>
+          </div>
+
+          <div class="item-content" data-lang="ar">
+            <p>تتيح لك هذه الميزة الاحتفاظ بالرسائل التي يحذفها المرسل بعد إرسالها.</p>
+            <ol>
+              <li>افتح <strong>إضافات محمد الطواف</strong>.</li>
+              <li>اختر <strong>الخصوصية والأمان</strong>.</li>
+              <li>فعّل <strong>منع حذف الرسائل</strong>.</li>
+            </ol>
+          </div>
+
+          <div class="item-content" data-lang="en">
+            <p>This feature lets you keep messages even after the sender deletes them.</p>
+            <ol>
+              <li>Open <strong>MTWA Settings</strong>.</li>
+              <li>Select <strong>Privacy and Security</strong>.</li>
+              <li>Enable <strong>Anti-Delete Messages</strong>.</li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section glass">
+      <h2 class="section-title" data-lang="ar">الميزات الإضافية</h2>
+      <h2 class="section-title" data-lang="en">Additional Features</h2>
+
+      <div class="guide-list">
+        <article class="guide-item">
+          <div class="item-heading">
+            <div class="item-icon"><i class="fas fa-download"></i></div>
+            <h3 class="item-title" data-lang="ar">تنزيل الحالات</h3>
+            <h3 class="item-title" data-lang="en">Status Download</h3>
+          </div>
+
+          <div class="item-content" data-lang="ar">
+            <p>يمكنك حفظ صور وفيديوهات الحالات مباشرةً من داخل التطبيق.</p>
+            <ol>
+              <li>افتح الحالة التي تريد حفظها.</li>
+              <li>اضغط على أيقونة التنزيل الظاهرة في الشاشة.</li>
+              <li>سيتم حفظ الحالة داخل معرض الصور.</li>
+            </ol>
+          </div>
+
+          <div class="item-content" data-lang="en">
+            <p>You can save status photos and videos directly from the app.</p>
+            <ol>
+              <li>Open the status you want to save.</li>
+              <li>Tap the download icon shown on the screen.</li>
+              <li>The status will be saved to your gallery.</li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="guide-item">
+          <div class="item-heading">
+            <div class="item-icon"><i class="fas fa-palette"></i></div>
+            <h3 class="item-title" data-lang="ar">تخصيص الواجهة</h3>
+            <h3 class="item-title" data-lang="en">Interface Customization</h3>
+          </div>
+
+          <div class="item-content" data-lang="ar">
+            <p>يمكنك تغيير الألوان والخطوط والأيقونات والثيمات بسهولة.</p>
+            <ol>
+              <li>انتقل إلى <strong>إضافات محمد الطواف</strong>.</li>
+              <li>اختر <strong>الثيمات</strong> أو <strong>الواجهة</strong>.</li>
+              <li>اختر ثيمًا جاهزًا أو عدّل العناصر يدويًا.</li>
+            </ol>
+          </div>
+
+          <div class="item-content" data-lang="en">
+            <p>You can easily change colors, fonts, icons, and themes.</p>
+            <ol>
+              <li>Go to <strong>MTWA Settings</strong>.</li>
+              <li>Select <strong>Themes</strong> or <strong>Interface</strong>.</li>
+              <li>Choose a ready-made theme or customize elements manually.</li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="guide-item">
+          <div class="item-heading">
+            <div class="item-icon"><i class="fas fa-image"></i></div>
+            <h3 class="item-title" data-lang="ar">ثيم الصورة</h3>
+            <h3 class="item-title" data-lang="en">Image Theme</h3>
+          </div>
+
+          <div class="item-content" data-lang="ar">
+            <p>تتيح لك هذه الميزة إنشاء ثيم كامل مستوحى من ألوان أي صورة تختارها من معرض الهاتف.</p>
+
+            <div class="path-box">
+              <i class="fas fa-route"></i>
+              إضافات محمد الطواف ← الثيمات ← ثيم الصورة
+            </div>
+          </div>
+
+          <div class="item-content" data-lang="en">
+            <p>This feature creates a complete theme inspired by the colors of any image selected from your gallery.</p>
+
+            <div class="path-box">
+              <i class="fas fa-route"></i>
+              MTWA Settings → Themes → Image Theme
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section glass">
+      <h2 class="section-title" data-lang="ar">نصائح مهمة</h2>
+      <h2 class="section-title" data-lang="en">Important Tips</h2>
+
+      <div class="tips-grid">
+        <article class="tip-box">
+          <h3 class="tip-heading">
+            <i class="fas fa-circle-up"></i>
+            <span data-lang="ar">التحديثات</span>
+            <span data-lang="en">Updates</span>
+          </h3>
+
+          <p data-lang="ar">
+            احرص دائمًا على تنزيل أحدث إصدار من الموقع الرسمي للحصول على التحسينات والإصلاحات الجديدة.
+          </p>
+
+          <p data-lang="en">
+            Always download the latest version from the official website to receive new improvements and fixes.
+          </p>
+        </article>
+
+        <article class="tip-box">
+          <h3 class="tip-heading">
+            <i class="fas fa-cloud-arrow-up"></i>
+            <span data-lang="ar">النسخ الاحتياطي</span>
+            <span data-lang="en">Backup</span>
+          </h3>
+
+          <p data-lang="ar">
+            أنشئ نسخة احتياطية من محادثاتك قبل تثبيت أي تحديث لتقليل احتمال فقدان البيانات.
+          </p>
+
+          <p data-lang="en">
+            Back up your chats before installing updates to reduce the risk of losing data.
+          </p>
+        </article>
+
+        <article class="tip-box">
+          <h3 class="tip-heading">
+            <i class="fas fa-shield-halved"></i>
+            <span data-lang="ar">مصدر التنزيل</span>
+            <span data-lang="en">Download Source</span>
+          </h3>
+
+          <p data-lang="ar">
+            لا تثبّت نسخًا من مواقع أو روابط مجهولة، واستخدم صفحة التنزيل الرسمية فقط.
+          </p>
+
+          <p data-lang="en">
+            Do not install copies from unknown websites or links. Use only the official download page.
+          </p>
+        </article>
+
+        <article class="tip-box">
+          <h3 class="tip-heading">
+            <i class="fas fa-mobile-screen-button"></i>
+            <span data-lang="ar">توافق الجهاز</span>
+            <span data-lang="en">Device Compatibility</span>
+          </h3>
+
+          <p data-lang="ar">
+            تأكد من توفر مساحة كافية ومن تحديث نظام أندرويد لتجنب مشكلات التثبيت أو الأداء.
+          </p>
+
+          <p data-lang="en">
+            Make sure your device has enough storage and an updated Android version to avoid installation or performance issues.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="support-box">
+      <p data-lang="ar">
+        واجهتك مشكلة غير موجودة في الدليل؟ أرسل تفاصيلها عبر صفحة التواصل.
+      </p>
+
+      <p data-lang="en">
+        Facing an issue not covered in the guide? Send the details through our contact page.
+      </p>
+
+      <a href="contact.html" class="support-link">
+        <i class="fas fa-headset"></i>
+        <span data-lang="ar">اتصل بنا</span>
+        <span data-lang="en">Contact Us</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo">
+          <i class="fab fa-whatsapp"></i>
+          <span>MTWhatsApp</span>
+        </div>
+
+        <p class="footer-desc" data-lang="ar">
+          يُعد الخيار الأفضل لمستخدمي واتساب الرسمي، لما يقدّمه من ميزات إضافية متقدمة. ونسعى دائمًا لتقديم أفضل الخدمات التي تلبي احتياجات المستخدمين.
+        </p>
+
+        <p class="footer-desc" data-lang="en">
+          It is a feature-rich choice for WhatsApp users. We always strive to provide useful services that meet users' needs.
+        </p>
+
+        <div class="footer-links">
+          <a href="/privacy-policy.html">
+            <i class="fas fa-shield-alt"></i>
+            <span data-lang="ar">الأمان والخصوصية</span>
+            <span data-lang="en">Security & Privacy</span>
+          </a>
+
+          <a href="/faq.html">
+            <i class="fas fa-question-circle"></i>
+            <span data-lang="ar">الأسئلة الشائعة</span>
+            <span data-lang="en">FAQ</span>
+          </a>
+
+          <a href="/terms.html">
+            <i class="fas fa-book"></i>
+            <span data-lang="ar">الشروط والأحكام</span>
+            <span data-lang="en">Terms & Conditions</span>
+          </a>
+
+          <a href="/contact.html">
+            <i class="fas fa-envelope"></i>
+            <span data-lang="ar">اتصل بنا</span>
+            <span data-lang="en">Contact Us</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-section-title" data-lang="ar">روابط مفيدة</h3>
+        <h3 class="footer-section-title" data-lang="en">Useful Links</h3>
+
+        <div class="footer-links">
+          <a href="index.html">
+            <i class="fas fa-house"></i>
+            <span data-lang="ar">الصفحة الرئيسية</span>
+            <span data-lang="en">Home Page</span>
+          </a>
+
+          <a href="https://t.me/mtwhatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-telegram"></i>
+            <span data-lang="ar">قناة تيليجرام</span>
+            <span data-lang="en">Telegram Channel</span>
+          </a>
+
+          <a href="/user-guide.html">
+            <i class="fab fa-youtube"></i>
+            <span data-lang="ar">دليل الاستخدام</span>
+            <span data-lang="en">User Guide</span>
+          </a>
+
+          <a href="https://www.mtaltawaf.com" target="_blank" rel="noopener">
+            <i class="fas fa-mobile-alt"></i>
+            <span data-lang="ar">تطبيقات أخرى</span>
+            <span data-lang="en">Other Apps</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>
+        &copy; 2026 MTMODS.
+        <span data-lang="ar">جميع الحقوق محفوظة</span>
+        <span data-lang="en">All Rights Reserved</span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    let lang = "ar";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("mtwhatsapp_language");
+
+      const browserLang =
+        navigator.languages && navigator.languages.length
+          ? navigator.languages[0]
+          : navigator.language || "ar";
+
+      const userLang =
+        savedLang ||
+        (browserLang.toLowerCase().startsWith("ar") ? "ar" : "en");
+
+      setLanguage(userLang, false);
+    });
+
+    function setLanguage(selectedLang, savePreference = true) {
+      lang = selectedLang === "en" ? "en" : "ar";
+
+      if (savePreference) {
+        try {
+          localStorage.setItem("mtwhatsapp_language", lang);
+        } catch (error) {}
+      }
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-lang]").forEach((element) => {
+        element.style.display =
+          element.dataset.lang === lang ? "revert" : "none";
+      });
+
+      updateLangLabel();
+    }
+
+    function toggleLang() {
+      setLanguage(lang === "ar" ? "en" : "ar");
+    }
+
+    function updateLangLabel() {
+      const langLabel = document.getElementById("langLabel");
+
+      if (langLabel) {
+        langLabel.textContent = lang === "ar" ? "EN" : "ع";
+      }
+    }
+
+    window.addEventListener("languagechange", () => {
+      const savedLang = localStorage.getItem("mtwhatsapp_language");
+      if (savedLang) return;
+
+      const browserLang =
+        navigator.languages && navigator.languages.length
+          ? navigator.languages[0]
+          : navigator.language || "ar";
+
+      setLanguage(
+        browserLang.toLowerCase().startsWith("ar") ? "ar" : "en",
+        false
+      );
+    });
+  </script>
 </body>
 </html>
