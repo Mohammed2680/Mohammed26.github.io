@@ -383,23 +383,42 @@
     }
 
     .contact-link {
+      position: relative;
+      overflow: hidden;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 8px;
-      padding: 9px 14px;
-      border-radius: 999px;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 11px 22px;
       color: #fff;
-      font-weight: 800;
+      border-radius: 16px;
+      font-weight: 900;
       background: linear-gradient(135deg, var(--green-dark), var(--green-2), var(--green));
-      box-shadow: 0 10px 22px rgba(0,168,132,.22);
+      box-shadow: 0 14px 28px rgba(16,185,129,.30);
       transition: transform var(--fast), box-shadow var(--fast);
     }
 
-    .contact-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(0,168,132,.28);
+    .contact-link::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -80%;
+      width: 55%;
+      height: 100%;
+      pointer-events: none;
+      transform: skewX(-25deg);
+      background: linear-gradient(90deg, transparent,
+  rgba(255,255,255,.38),
+  transparent
+);
+      animation: shine 2.8s ease-in-out infinite;
     }
+
+    .contact-link:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    } 
 
     .update-date {
       text-align: center;
@@ -505,6 +524,11 @@
       font-size: 13px;
     }
 
+ @keyframes shine {
+      0%, 45% { right: -80%; }
+      75%, 100% { right: 135%; }
+    }
+    
     @media (max-width: 560px) {
       .top-bar {
         padding-inline: 12px;
@@ -686,8 +710,8 @@
           </p>
 
           <a href="contact.html" class="contact-link">
-            <i class="fas fa-paper-plane"></i>
-            الانتقال إلى صفحة اتصل بنا
+            <i class="fas fa-headset"></i>
+             اتصل بنا
           </a>
         </article>
       </div>
@@ -938,4 +962,4 @@
     });
   </script>
 </body>
-</html>
+              </html>
